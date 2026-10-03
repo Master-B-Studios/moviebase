@@ -19644,5 +19644,16 @@
         "folder": "1786",
         "filename": "Vanilla Sky",
         "poster": "movies/1786/Vanilla Sky-poster.jpg"
+    },
+    {
+        "id": "1787",
+        "title": "Supergirl",
+        "plot": "Kara Zor-El – alias Supergirl – sieht sich mit einem unerwarteten und skrupellosen Gegner konfrontiert. Widerwillig tut sie sich mit einem ungewöhnlichen Verbündeten zusammen und begibt sich auf eine spektakuläre Reise durch das Universum, um Gerechtigkeit zu erlangen und Vergeltung zu üben.",
+        "runtime": "108",
+        "mpaa": "FSK-12",
+        "year": "2026",
+        "folder": "1787",
+        "filename": "Supergirl",
+        "poster": "movies/1787/Supergirl-poster.jpg"
     }
 ]
