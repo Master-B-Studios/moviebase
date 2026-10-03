@@ -19647,13 +19647,35 @@
     },
     {
         "id": "1787",
+        "title": "Der Hexer",
+        "plot": "Nachdem er zwei seiner Komplizen getötet hat, findet ein Gangsterboss selbst den Tod durch das steckbrieflich gesuchte Verbrecherphantom „Der Hexer“, der damit die Ermordung seiner Schwester rächt. Inspektor Higgins und Kommissar Wesby von Scotland Yard sollen den Rächer stoppen, bevor er noch weitere Selbstjustizmorde begehen kann.",
+        "runtime": "82",
+        "mpaa": "FSK-12",
+        "year": "1964",
+        "folder": "1787",
+        "filename": "Der Hexer",
+        "poster": "movies/1787/Der Hexer-poster.jpg"
+    },
+    {
+        "id": "1787",
         "title": "Supergirl",
         "plot": "Kara Zor-El – alias Supergirl – sieht sich mit einem unerwarteten und skrupellosen Gegner konfrontiert. Widerwillig tut sie sich mit einem ungewöhnlichen Verbündeten zusammen und begibt sich auf eine spektakuläre Reise durch das Universum, um Gerechtigkeit zu erlangen und Vergeltung zu üben.",
         "runtime": "108",
         "mpaa": "FSK-12",
         "year": "2026",
-        "folder": "1787",
+        "folder": "1789",
         "filename": "Supergirl",
-        "poster": "movies/1787/Supergirl-poster.jpg"
+        "poster": "movies/1789/Supergirl-poster.jpg"
+    },
+    {
+        "id": "1788",
+        "title": "Das Wirtshaus Von Dartmoor",
+        "plot": "Im Gefängnis von Dartmoor geht es schon lange nicht mehr mit rechten Dingen zu. Die Polizei zählt bereits zwölf Ausbrüche innerhalb der letzten zwei Jahre. Von den Flüchtigen fehlt jede Spur und die Gesetzeshüter gehen davon aus, dass sie ermordet wurden. In die Ermittlungen schaltet sich nun der australische Privatdetektiv Smith alias Anthony Nash ein, der mit dem letzten Flüchtigen eine ganz eigene Rechnung zu begleichen hat. Schon bald sind Nash und Inspektor Cromwell auf einer heißen Spur. Um endlich hinter das düstere Geheimnis der Ausbrüche zu kommen, fingiert Smith alias Nash einen Überfall, um so als Häftling in Dartmoor einsitzen zu können. Sein Plan geht auf - beinahe zu gut: Wie seinen Vorgängern wird auch ihm ein Zettel in die Zelle geschmuggelt, auf dem genaue Anweisungen stehen, wie er sich am Fluchttag zu verhalten habe. Nash's Flucht verläuft planmäßig und führt ihn zum Wirtshaus Drei Kronen. Von da an ist Smiths Leben keinen Pfifferling mehr wert...",
+        "runtime": "85",
+        "mpaa": "FSK-16",
+        "year": "1964",
+        "folder": "1788",
+        "filename": "Das Wirtshaus Von Dartmoor",
+        "poster": "movies/1788/Das Wirtshaus Von Dartmoor-poster.jpg"
     }
 ]
