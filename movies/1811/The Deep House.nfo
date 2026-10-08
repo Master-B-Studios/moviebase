@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>The Deep House</title>
+   <originaltitle>The Deep House</originaltitle>
+   <plot>Ein junges Paar, das sich auf Unterwasser-Erkundungsvideos spezialisiert hat, entdeckt beim Tauchen ein Haus, das in den Tiefen des abgelegenen französischen Sees versunken ist. Was zunächst ein einzigartiger Fund war, verwandelt sich bald in einen Albtraum, als sie entdecken, dass das Haus der Schauplatz grausamer Verbrechen war.</plot>
+   <runtime>85</runtime>
+   <mpaa>FSK-18</mpaa>
+   <id>1811</id>
+   <uniqueid type="mbdb">1811</uniqueid>
+   <year>2021</year>
+</movie>
