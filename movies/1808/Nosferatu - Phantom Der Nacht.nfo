@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Nosferatu - Phantom Der Nacht</title>
+   <originaltitle>Nosferatu - Phantom Der Nacht</originaltitle>
+   <plot>Jonathan Harker ist alles andere als begeistert, als er den Auftrag erhält, von Wismar ins ferne Transsylvanien zu reisen. Dort interessiert sich ein gewisser Graf Dracula für den Kauf eines Hauses in der Hansestadt. Schweren Herzens verabschiedet er sich von seiner geliebten Frau und reitet los. Er ahnt nicht, welches Grauen ihn erwartet.</plot>
+   <runtime>107</runtime>
+   <mpaa>FSK-16</mpaa>
+   <id>1808</id>
+   <uniqueid type="mbdb">1808</uniqueid>
+   <year>1979</year>
+</movie>
