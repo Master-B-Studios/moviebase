@@ -19886,5 +19886,60 @@
         "folder": "1809",
         "filename": "Passwort Swordfish",
         "poster": "movies/1809/Passwort Swordfish-poster.jpg"
+    },
+    {
+        "id": "1810",
+        "title": "The Crow - Die Krähe",
+        "plot": "Halloween, die Nacht des Teufels. Der junge Rockgitarrist Eric Draven und seine Verlobte werden in ihrer Wohnung von einer Street-Gang überfallen und brutal ermordet. Ein Jahr danach erweckt eine magische Krähe den toten Eric wieder zum Leben. Unverwundbar und ausgestattet mit übernatürlichen Kräften, nimmt er unnachsichtig Rache an den Bandenmitgliedern und ihrem Auftraggeber.",
+        "runtime": "102",
+        "mpaa": "FSK-16",
+        "year": "1994",
+        "folder": "1810",
+        "filename": "The Crow - Die Krähe",
+        "poster": "movies/1810/The Crow - Die Krähe-poster.jpg"
+    },
+    {
+        "id": "1811",
+        "title": "The Deep House",
+        "plot": "Ein junges Paar, das sich auf Unterwasser-Erkundungsvideos spezialisiert hat, entdeckt beim Tauchen ein Haus, das in den Tiefen des abgelegenen französischen Sees versunken ist. Was zunächst ein einzigartiger Fund war, verwandelt sich bald in einen Albtraum, als sie entdecken, dass das Haus der Schauplatz grausamer Verbrechen war.",
+        "runtime": "85",
+        "mpaa": "FSK-18",
+        "year": "2021",
+        "folder": "1811",
+        "filename": "The Deep House",
+        "poster": "movies/1811/The Deep House-poster.jpg"
+    },
+    {
+        "id": "1812",
+        "title": "Tucker & Dale Vs Evil",
+        "plot": "Tucker und Dale sind beste Freunde, die ihre Zeit in den abgeschiedenen Wäldern von West Virginia mit all dem verbringen, was beste Freunde eben so tun – sie trinken Bier, gehen jagen und schauen auch mal schüchtern den Mädchen hinterher. Als sie eines Tages während eines Ausflugs mit einer Schar großstädtischer Teenager kollidieren, glauben die, echt perverse Hinterwäldler vor sich zu haben: Hilfe! Panik! Gestammelte Erklärungen machen alles nur noch schlimmer. Als die Landeier wenig später die hübsche Allison vor dem Ertrinken retten, wird dies prompt als Entführungsversuch fehlinterpretiert. Schon schreiten die Städter entschlossen und mit allem, was der Geräteschuppen hergibt, zur Gegenwehr. Jetzt wird guter Rat teuer, bald stapeln sich die ersten Leichen im Wald.",
+        "runtime": "89",
+        "mpaa": "FSK-18",
+        "year": "2010",
+        "folder": "1812",
+        "filename": "Tucker & Dale Vs Evil",
+        "poster": "movies/1812/Tucker & Dale Vs Evil-poster.jpg"
+    },
+    {
+        "id": "1813",
+        "title": "Waterworld",
+        "plot": "In der gar nicht mehr so fernen Zukunft ist die Welt buchstäblich ins Wasser gefallen. Die Polarkappen sind geschmolzen und die Überlebenden der Apokalypse versuchen auf künstlichen Müll-Inseln ein neues Gemeinwesen aufzubauen. Held der friedfertigen Atoller ist der unbeugsame Mariner. Als wilde \"Smokers\"-Piraten die Insel angreifen, flieht Mariner mit der 10jährigen Enola, die noch den Weg nach Dryland kennt. Bald darauf fällt das Mädchen jedoch in die Hände der Piraten. und Der Mariner nimmt die Verfolgung auf.",
+        "runtime": "135",
+        "mpaa": "FSK-12",
+        "year": "1995",
+        "folder": "1813",
+        "filename": "Waterworld",
+        "poster": "movies/1813/Waterworld-poster.jpg"
+    },
+    {
+        "id": "1814",
+        "title": "Wild Card",
+        "plot": "Nick Wild hat es satt: Seit Jahren schlägt sich der ehemalige Söldner als Detektiv und Gelegenheitsbodyguard im Zockerparadies Las Vegas durch, obwohl er doch am liebsten sofort nach Korsika auswandern würde. Dafür fehlt allerdings das nötige Kleingeld. Als ihn eines Tages seine Ex-Flamme Holly übel zugerichtet um Hilfe anfleht, wird er schneller als ihm lieb ist in ein schmutziges Spiel mit dem einflussreichen Danny DeMarco hineingezogen. Die Männer DeMarcos im Nacken, stürzt sich Nick Wild tief in die Abgründe von Las Vegas und entfesselt eine gefährliche, alte Leidenschaft.",
+        "runtime": "92",
+        "mpaa": "FSK-16",
+        "year": "2015",
+        "folder": "1814",
+        "filename": "Wild Card",
+        "poster": "movies/1814/Wild Card-poster.jpg"
     }
 ]
