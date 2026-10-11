@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Lethal Weapon 1</title>
+   <originaltitle>Lethal Weapon 1</originaltitle>
+   <plot>Martin Riggs, der harte Mann, und Roger Murtaugh, der besonnene Polizist, arbeiten beide in L.A., kämpften für eine Spezialeinheit in Vietnam und hassen es mit einem Partner zusammen arbeiten zu müssen. Doch das Schicksal führt beide zusammen. Als Partner müssen sie einen gigantischen Heroinschmuggel, hinter welchem sich eine Gruppe ehemaliger CIA-Söldner verbirgt, aufdecken.</plot>
+   <runtime>110</runtime>
+   <mpaa>FSK-12</mpaa>
+   <id>1825</id>
+   <uniqueid type="mbdb">1825</uniqueid>
+   <year>1987</year>
+</movie>
