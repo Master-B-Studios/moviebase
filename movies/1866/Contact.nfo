@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Contact</title>
+   <originaltitle>Contact</originaltitle>
+   <plot>Die Wissenschaftlerin Ellie Arroway ist besessen von der Idee, die Existenz außerirdischer Intelligenz zu beweisen. Eines Tages gelingt es ihr tatsächlich, eine Nachricht aus dem All aufzuzeichnen. Eine fremde Lebensform macht ein verschlüsseltes Angebot zur Kontaktaufnahme! Unter weltweiter Beteiligung bereitet sich die Menschheit auf den aufregendsten Moment ihrer Geschichte vor.</plot>
+   <runtime>150</runtime>
+   <mpaa>FSK-12</mpaa>
+   <id>1866</id>
+   <uniqueid type="mbdb">1866</uniqueid>
+   <year>1997</year>
+</movie>
