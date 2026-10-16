@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Die Klapperschlange</title>
+   <originaltitle>Die Klapperschlange</originaltitle>
+   <plot>New York im Jahre 1997: Aufgrund der hohen Verbrechensrate ist ganz Manhattan in ein riesiges Hochsicherheits-Gefängnis mit über drei Millionen Verbrechern umgewandelt worden. Ausgerechnet hier stürzt die Air Force One mit dem US-Präsidenten ab. Es gibt nur einen, der den Präsidenten noch retten kann, der ehemalige Kriegsheld Snake Plissken.</plot>
+   <runtime>99</runtime>
+   <mpaa>FSK-16</mpaa>
+   <id>1877</id>
+   <uniqueid type="mbdb">1877</uniqueid>
+   <year>1981</year>
+</movie>
