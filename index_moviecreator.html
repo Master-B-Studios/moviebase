@@ -26,49 +26,74 @@
 
       .headerLandscape {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: min-content min-content min-content;grid-template-rows: min-content;}
 
-      #main {width: 100vw;height: auto;z-index: 100;margin: 4.25rem 0 0 0;}
+      #main {width: calc(100vw - 10rem);height: auto;z-index: 100;margin: 4.25rem auto;}
 
       .table_buttons {width: 100%;text-align: center;table-layout: fixed;}
       .table_buttons td {width: auto;height: 4rem;text-align: center;}
       .table_buttons td div {width: min-content;height: 3rem;padding: 0 1rem;margin: auto;display: flex;align-items: center;justify-content: center;white-space: pre;}
       .table_buttons td div svg {position: relative;left: -0.25rem;}
+      .table_buttons td label {width: min-content;height: 3rem;padding: 0 1rem;margin: auto;display: flex;align-items: center;justify-content: center;white-space: pre;}
+      .table_buttons td label svg {position: relative;left: -0.25rem;}
 
       .table_input {width: 100%;height: auto;margin: auto;}
       .tr_input {width: 100%;height: auto;}
       .tr_input_gap {width: auto;height: 0.5rem;}
-      .td_input_01 {width: auto;padding: 0.5rem;margin: 0.5rem;text-align: right;}
-      .td_input_02 {width: auto;padding: 0.5rem;margin: 0.5rem;text-align: left;}
-      .td_input_03 {width: auto;padding: 0.5rem;margin: 0.5rem;text-align: center;}
+      .td_input_01 {width: auto;height: 2rem;padding: 0.5rem;margin: 0.5rem;text-align: right;white-space: pre;}
+      .td_input_02 {width: auto;height: 2rem;padding: 0.5rem;margin: 0.5rem;text-align: left;white-space: pre;}
+      .td_input_03 {width: auto;height: 2rem;padding: 0.5rem;margin: 0.5rem;text-align: center;white-space: pre;}
       .td_input_text {min-width: 3rem;height: 2rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;}
       .td_input_text:focus {outline: none;}
-      .td_input_text_hour {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
-      .td_input_text_hour:focus {outline: none;}
-      .td_input_text_minute {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
-      .td_input_text_minute:focus {outline: none;}
+      .tdRuntime {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
+      .tdRuntime:focus {outline: none;}
+      .tdRuntimeHour {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
+      .tdRuntimeHour:focus {outline: none;}
+      .tdRuntimeMinute {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
+      .tdRuntimeMinute:focus {outline: none;}
+      .tdPoster {width: auto;height: 10.75rem;padding: 0;}
+      .tdPoster canvas {display: block;height: 100%;width: auto;margin: auto;aspect-ratio: 2 / 3;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;cursor: default;transition: all 0.6s;}
+
+      input {cursor: pointer;}
+      input[accept=".jpg,.png,.webp"] {display: none;z-index: 100;}
+      input[accept=".nfo"] {display: none;z-index: 100;}
+      .icon_upload {width: auto;height: 2rem;margin: 0.5rem;padding: 0 0 0 1rem;text-align: center;white-space: pre;}
+      .icon_upload label {height: 100%;}
+      .icon_upload label svg {position: relative;left: -0.25rem;}
     </style>
   </head>
-  <body onload="windowModeCheck();init_menubar();load_moviebase();">
+  <body onload="windowModeCheck();init_menubar();load_moviebase();load_preview_icon();">
     <div id="menubar"></div><div id="header"></div>
     <div id="main">
       <table class="table_input">
-        <tr class="tr_input"><td class="td_input_01">Titel:</td><td id="input_title_movie" class="td_input_text" contenteditable="true" colspan="7"></td></tr>
+        <tr class="tr_input">
+          <td class="td_input_01">Titel:</td><td id="inputTitleMovie" class="td_input_text" contenteditable="true" colspan="7"></td>
+          <td class="tdPoster" id="icon_template" rowspan="5"><canvas id="canvas_icon"></canvas></td>
+        </tr>
         <tr class="tr_input"><td class="tr_input_gap"></td></tr>
-        <tr class="tr_input"><td class="td_input_01">Nummer:</td><td id="input_number_movie" class="td_input_text" contenteditable="true"></td><td class="td_input_01">Jahr:</td><td id="input_year_movie" class="td_input_text" contenteditable="true" colspan="3"></td><td class="td_input_01">Altersfreigabe:</td><td id="input_age_movie" class="td_input_text" contenteditable="true"></td></tr>
+        <tr class="tr_input"><td class="td_input_01">Nummer:</td><td id="inputNumberMovie" class="td_input_text" contenteditable="true"></td><td class="td_input_01">Jahr:</td><td id="inputYearMovie" class="td_input_text" contenteditable="true" colspan="3"></td><td class="td_input_01">Altersfreigabe:</td><td id="inputFSKMovie" class="td_input_text" contenteditable="true"></td></tr>
         <tr class="tr_input"><td class="tr_input_gap"></td></tr>
-        <tr class="tr_input"><td class="td_input_01">Laufzeit:</td><td id="input_runtime_movie" class="td_input_text" contenteditable="true"></td><td class="td_input_02">Minuten - oder</td><td id="input_runtime_movie_hour" class="td_input_text_hour" contenteditable="true"></td><td class="td_input_03">HH : MM</td><td id="input_runtime_movie_minute" class="td_input_text_minute" contenteditable="true"></td></tr>
+        <tr class="tr_input">
+          <td class="td_input_01">Laufzeit:</td><td id="inputRuntimeMovie" class="tdRuntimeMinute" contenteditable="true" oninput="calcTime(this);"></td><td class="td_input_02">Minuten - oder</td><td id="inputRuntimeMovieHour" class="tdRuntimeHour" contenteditable="true" oninput="calcTime(this);"></td><td class="td_input_03">HH : MM</td><td id="inputRuntimeMovieMinute" class="tdRuntimeMinute" contenteditable="true" oninput="calcTime(this);"></td>
+          <td class="icon_upload" colspan="2"><label class="mb_button"><input type="file" accept=".jpg,.png,.webp" onchange="upload_icon(this);"></input><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M240-160q-33 0-56.5-23.5T160-240v-80q0-17 11.5-28.5T200-360q17 0 28.5 11.5T240-320v80h480v-80q0-17 11.5-28.5T760-360q17 0 28.5 11.5T800-320v80q0 33-23.5 56.5T720-160H240Zm200-486-75 75q-12 12-28.5 11.5T308-572q-11-12-11.5-28t11.5-28l144-144q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l144 144q12 12 11.5 28T652-572q-12 12-28.5 12.5T595-571l-75-75v286q0 17-11.5 28.5T480-320q-17 0-28.5-11.5T440-360v-286Z"/></svg> Cover Hochladen</label></td>
+        </tr>
         <tr class="tr_input"><td class="tr_input_gap"></td></tr>
-        <tr class="tr_input"><td class="td_input_01">Beschreibung:</td><td id="input_content_movie" class="td_input_text" contenteditable="true" colspan="7" oninput="format_text(this);"></td></tr>
+        <tr class="tr_input"><td class="td_input_01">Beschreibung:</td><td id="inputPlotMovie" class="td_input_text" contenteditable="true" colspan="8"></td></tr>
       </table>
       <table class="table_buttons">
         <tr>
-          <td><div class="mb_button" onclick="reset_all();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>Alles Leeren</div></td>
-          <td><div class="mb_button" onclick="save_film();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg> Film Speichern</div></td>
-          <td><div class="mb_button" onclick="save_film();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" style="transform: rotate(270deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>Nächster Film</div></td>
+          <td><label class="mb_button"><input type="file" accept=".nfo" onchange="uploadNFO(this);"></input><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M240-160q-33 0-56.5-23.5T160-240v-80q0-17 11.5-28.5T200-360q17 0 28.5 11.5T240-320v80h480v-80q0-17 11.5-28.5T760-360q17 0 28.5 11.5T800-320v80q0 33-23.5 56.5T720-160H240Zm200-486-75 75q-12 12-28.5 11.5T308-572q-11-12-11.5-28t11.5-28l144-144q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l144 144q12 12 11.5 28T652-572q-12 12-28.5 12.5T595-571l-75-75v286q0 17-11.5 28.5T480-320q-17 0-28.5-11.5T440-360v-286Z"/></svg> Film Bearbeiten</label></td>
+          <td><div class="mb_button" onclick="resetAll();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>Alles Leeren</div></td>
+          <td><div class="mb_button" onclick="downloadNFO();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg> Film Speichern</div></td>
+          <td><div class="mb_button" onclick="downloadCover('canvas_icon');"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg> Cover Herunterladen</div></td>
+          <td><div class="mb_button" onclick="nextMovie();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" style="transform: rotate(270deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>Nächster Film</div></td>
         </tr>
       </table>
     </div>
   </body>
 </html>
+<div style="display: none;">
+  <img id="template_bg" src="index_moviecreator_template.jpg">
+  <div id="loaded_content"></div>
+</div>
 <script>
   let windowMode = '';window.addEventListener('resize', () => {windowModeCheck();windowModeReorder();}); function windowModeCheck() {if (window.innerWidth >= window.innerHeight) {windowMode = 'landscape';} else {windowMode = 'portrait';}}
   function init_menubar() {
@@ -98,19 +123,153 @@
   }
 
   function load_table_data(data) {
-    console.log('Einträge: ' + data.length)
+    const movieCounter = data.length;
+    const movieCounterInput = document.getElementById('inputNumberMovie');
+    movieCounterInput.innerHTML = movieCounter + 1;
   }
 
+  function calcTime(obj) {
+    const inputRuntimeMovie = document.getElementById('inputRuntimeMovie');
+    const inputRuntimeMovieHour = document.getElementById('inputRuntimeMovieHour');
+    const inputRuntimeMovieMinute = document.getElementById('inputRuntimeMovieMinute');
+    if (obj.id === 'inputRuntimeMovie') {let minutes = obj.innerHTML;let hours = Math.floor(minutes / 60);inputRuntimeMovieHour.innerHTML = hours;let leftMinutes = parseFloat(minutes % 60);inputRuntimeMovieMinute.innerHTML = String(leftMinutes).padStart(2, '0');}
+    else {let hours = Number(inputRuntimeMovieHour.innerHTML);let minutes = Number(inputRuntimeMovieMinute.innerHTML);let summary = (hours * 60) + minutes;inputRuntimeMovie.innerHTML = summary;}
+  }
 
-  function downloadImage(movie) {downloadFile(movie.poster, `${movie.filename}-poster.jpg`);}
-  function downloadNFO(movie) {downloadFile(`Movies/${movie.folder}/${movie.filename}.nfo`, `${movie.filename}.nfo`);}
-  function downloadFile(url, filename) {
-    const link = document.createElement('a');
+  document.querySelectorAll('td[contenteditable="true"]').forEach(td => {
+    td.addEventListener('paste', function(e) {
+        e.preventDefault();
+        const text = e.clipboardData.getData('text/plain');
+        document.execCommand('insertText', false, text);
+    });
+});
+
+  function resetAll() {window.location.reload();}
+
+  function nextMovie() {
+    const movieCounterInput = document.getElementById('inputNumberMovie');
+    movieCounterInput.innerHTML = Number(movieCounterInput.innerHTML) + 1;
+    document.getElementById('inputTitleMovie').innerHTML = '';
+    document.getElementById('inputYearMovie').innerHTML = '';
+    document.getElementById('inputFSKMovie').innerHTML = '';
+    document.getElementById('inputRuntimeMovie').innerHTML = '';
+    document.getElementById('inputRuntimeMovieHour').innerHTML = '';
+    document.getElementById('inputRuntimeMovieMinute').innerHTML = '';
+    document.getElementById('inputPlotMovie').innerHTML = '';
+  }
+  
+  let saveContent = '';
+
+  function saveMovie() {
+    let title_movie = document.getElementById('inputTitleMovie').innerHTML;
+    let number_movie = document.getElementById('inputNumberMovie').innerHTML;
+    number_movie = String(number_movie).padStart(4, '0');
+    let runtime_movie = document.getElementById('inputRuntimeMovie').innerHTML;
+    let year_movie = document.getElementById('inputYearMovie').innerHTML;
+    let age_movie = document.getElementById('inputFSKMovie').innerHTML;
+    let content_movie = document.getElementById('inputPlotMovie').innerHTML;
+    
+    saveContent = 
+    '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>\n'+
+    '<movie>\n'+
+    '   <title>'+title_movie+'</title>\n'+
+    '   <originaltitle>'+title_movie+'</originaltitle>\n'+
+    '   <plot>'+content_movie+'</plot>\n'+
+    '   <runtime>'+runtime_movie+'</runtime>\n'+
+    '   <mpaa>FSK-'+age_movie+'</mpaa>\n'+
+    '   <id>'+number_movie+'</id>\n'+
+    '   <uniqueid type="mbdb">'+number_movie+'</uniqueid>\n'+
+    '   <year>'+year_movie+'</year>\n'+
+    '</movie>\n';
+    console.log(saveContent);
+  }
+
+  function downloadNFO() {
+    saveMovie();
+    let title = document.getElementById('inputTitleMovie').innerHTML;
+    title = title.replace(/&amp;/gi, '&');
+    const blob = new Blob([saveContent], { type: "application/xml;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
     link.href = url;
-    link.download = filename;
+    link.download = title + '.nfo';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   }
+
+  const template_bg = document.getElementById('template_bg');
+  let uploaded_image = null;
+  const img = new Image();
+	const reader = new FileReader();
+
+  function load_preview_icon() {
+		const canvas = document.getElementById('canvas_icon');
+		const ctx = canvas.getContext('2d');
+		canvas.width = 600;canvas.height = 900;
+		ctx.drawImage(template_bg, 0, 0, 600, 900);
+	}
+  function upload_icon(obj) {
+		const file = obj.files[0];
+		if (!file) {return;}
+		if (file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/webp') {import_icon(file);}
+	}
+	function import_icon(file) {
+		const reader = new FileReader();
+		reader.addEventListener('load', () => {
+			const img = new Image();
+			img.addEventListener('load', () => {uploaded_image = img;draw_icon();});
+			img.src = reader.result;
+		});
+		reader.readAsDataURL(file);
+	}
+	function draw_icon() {
+		const canvas = document.getElementById('canvas_icon');
+		const ctx = canvas.getContext('2d');
+		canvas.width = 600;canvas.height = 900;
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		if (uploaded_image) {ctx.drawImage(uploaded_image, 0, 0, 600, 900);}
+	}
+  async function downloadCover(obj) {
+    let title = document.getElementById('inputTitleMovie').innerHTML;
+    title = title.replace(/&amp;/gi, '&');
+    const canvas = document.getElementById(obj);
+    canvas.toBlob(function(blob) {
+      if (!blob) {alert('Das JPG konnte nicht erstellt werden.');return;}
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = title + '-poster.jpg';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }, 'image/jpeg', 1.0);
+  }
+
+  function uploadNFO(obj) {
+    file = obj.files[0];
+    var content = document.getElementById('loaded_content');
+    var reader = new FileReader();
+    reader.addEventListener('load',() => {content.innerHTML = reader.result;parseNFO();},false,);
+    reader.readAsText(file);
+}
+function parseNFO() {
+    var full_content = document.getElementById('loaded_content').innerHTML;
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(full_content,'text/xml');
+    if (xmlDoc.getElementsByTagName('movie')[0] != undefined) {
+        document.getElementById('inputTitleMovie').innerHTML = xmlDoc.getElementsByTagName('title')[0].childNodes[0].nodeValue;
+        document.getElementById('inputNumberMovie').innerHTML = parseInt(xmlDoc.getElementsByTagName('id')[0].childNodes[0].nodeValue);
+        document.getElementById('inputRuntimeMovie').innerHTML = xmlDoc.getElementsByTagName('runtime')[0].childNodes[0].nodeValue;
+        calcTime(document.getElementById('inputRuntimeMovie'));
+        document.getElementById('inputYearMovie').innerHTML = xmlDoc.getElementsByTagName('year')[0].childNodes[0].nodeValue;
+        document.getElementById('inputFSKMovie').innerHTML = xmlDoc.getElementsByTagName('mpaa')[0].childNodes[0].nodeValue.slice(4);
+        document.getElementById('inputPlotMovie').innerHTML = xmlDoc.getElementsByTagName('plot')[0].childNodes[0].nodeValue;
+        document.documentElement.scrollTop = 0;
+    } else {alert('Diese .nfo-Datei enthält keine Filmdaten!');}
+}
 </script>
