@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>MB Movie-Creator</title>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></meta>
+    <link rel="icon" type="image/x-icon" href="../homepage/images/MB_Icon_02.svg"></link>
+    <style>
+      body {background-color: #000000;margin: 0;padding: 0;background-image: url("../homepage/assets/wallpaper_00.jpg");background-repeat: repeat, no-repeat;background-size: auto, 100% 100%;background-attachment: fixed;overflow-y: scroll;color: #dbdbdb;font-size: 1rem;font-family: Arial, Helvetica, sans-serif;-webkit-tap-highlight-color: transparent;}
+      .mb_button {display: flex;align-items: center;justify-content: center;background-color: #222222;box-shadow: rgba(255, 255, 255, 0.3) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #dbdbdb;cursor: pointer;transition: all 0.6s;}
+      .mb_button:focus {background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);} .mb_button:active {background-color: #222222dd;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);}
+      @media (hover: hover) and (pointer: fine) {.mb_button:hover {background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);} .mb_button:active {background-color: #222222dd;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);}}
+      .mb_text {display: flex;align-items: center;justify-content: center;background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;cursor: default;transition: all 0.6s;}
+      .mb_input {display: flex;align-items: center;justify-content: center;background-color: #222222dd;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;cursor: text;transition: all 0.6s;} .mb_input:focus {outline: none;border: 1px solid #999999;}
+
+      #menubar {width: auto;height: 4rem;position: fixed;top: 0;z-index: 9000;display: block;display: flex;}
+      #menubar div {width: auto;height: auto;display: grid;grid-template-columns: min-content;grid-template-rows: min-content;}
+      #menubar_logo {width: 4rem;height: 4rem;grid-column: 1; grid-row: 1;margin: 0.5rem 0 0 0.5rem;background-color: #222222;box-shadow: rgba(255, 255, 255, 0.3) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #dbdbdb;cursor: pointer;transition: all 0.6s;}
+      #menubar_logo:hover {background-color: #222222dd;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);}
+      #menubar_logo img {width: 2.6rem;height: 2.6rem;filter: brightness(60%);border-radius: 0.5rem;margin: 0.2rem;transition: all 0.6s;}
+      #menubar_logo:hover img {filter: brightness(100%);border-color: #dbdbdb;}
+      #menubar_items {width: auto;height: 4rem;grid-column: 1; grid-row: 1;margin: 0.5rem;border-radius: 0.5rem;border: 1px solid #666666;background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;cursor: pointer;}
+      #menubar_items a {width: 2.6rem;height: 2.6rem;text-align: center;color: #dbdbdb;text-decoration: none;filter: brightness(60%);margin: 0.2rem 0.5rem;transition: all 0.6s;}
+      #menubar_items a img {width: 2.6rem;height: 2.6rem;}
+      #menubar_items a:hover {filter: brightness(200%);}
+
+      .headerLandscape {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: min-content min-content min-content;grid-template-rows: min-content;}
+
+      #main {width: 100vw;height: auto;z-index: 100;margin: 4.25rem 0 0 0;}
+
+      .table_buttons {width: 100%;text-align: center;table-layout: fixed;}
+      .table_buttons td {width: auto;height: 4rem;text-align: center;}
+      .table_buttons td div {width: min-content;height: 3rem;padding: 0 1rem;margin: auto;display: flex;align-items: center;justify-content: center;white-space: pre;}
+      .table_buttons td div svg {position: relative;left: -0.25rem;}
+
+      .table_input {width: 100%;height: auto;margin: auto;}
+      .tr_input {width: 100%;height: auto;}
+      .tr_input_gap {width: auto;height: 0.5rem;}
+      .td_input_01 {width: auto;padding: 0.5rem;margin: 0.5rem;text-align: right;}
+      .td_input_02 {width: auto;padding: 0.5rem;margin: 0.5rem;text-align: left;}
+      .td_input_03 {width: auto;padding: 0.5rem;margin: 0.5rem;text-align: center;}
+      .td_input_text {min-width: 3rem;height: 2rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;}
+      .td_input_text:focus {outline: none;}
+      .td_input_text_hour {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
+      .td_input_text_hour:focus {outline: none;}
+      .td_input_text_minute {min-width: 3rem;background-color: #22222299;padding: 0.5rem;margin: 0.5rem;cursor: text;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;text-align: center;}
+      .td_input_text_minute:focus {outline: none;}
+    </style>
+  </head>
+  <body onload="windowModeCheck();init_menubar();load_moviebase();">
+    <div id="menubar"></div><div id="header"></div>
+    <div id="main">
+      <table class="table_input">
+        <tr class="tr_input"><td class="td_input_01">Titel:</td><td id="input_title_movie" class="td_input_text" contenteditable="true" colspan="7"></td></tr>
+        <tr class="tr_input"><td class="tr_input_gap"></td></tr>
+        <tr class="tr_input"><td class="td_input_01">Nummer:</td><td id="input_number_movie" class="td_input_text" contenteditable="true"></td><td class="td_input_01">Jahr:</td><td id="input_year_movie" class="td_input_text" contenteditable="true" colspan="3"></td><td class="td_input_01">Altersfreigabe:</td><td id="input_age_movie" class="td_input_text" contenteditable="true"></td></tr>
+        <tr class="tr_input"><td class="tr_input_gap"></td></tr>
+        <tr class="tr_input"><td class="td_input_01">Laufzeit:</td><td id="input_runtime_movie" class="td_input_text" contenteditable="true"></td><td class="td_input_02">Minuten - oder</td><td id="input_runtime_movie_hour" class="td_input_text_hour" contenteditable="true"></td><td class="td_input_03">HH : MM</td><td id="input_runtime_movie_minute" class="td_input_text_minute" contenteditable="true"></td></tr>
+        <tr class="tr_input"><td class="tr_input_gap"></td></tr>
+        <tr class="tr_input"><td class="td_input_01">Beschreibung:</td><td id="input_content_movie" class="td_input_text" contenteditable="true" colspan="7" oninput="format_text(this);"></td></tr>
+      </table>
+      <table class="table_buttons">
+        <tr>
+          <td><div class="mb_button" onclick="reset_all();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>Alles Leeren</div></td>
+          <td><div class="mb_button" onclick="save_film();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg> Film Speichern</div></td>
+          <td><div class="mb_button" onclick="save_film();"><svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" style="transform: rotate(270deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>Nächster Film</div></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+<script>
+  let windowMode = '';window.addEventListener('resize', () => {windowModeCheck();windowModeReorder();}); function windowModeCheck() {if (window.innerWidth >= window.innerHeight) {windowMode = 'landscape';} else {windowMode = 'portrait';}}
+  function init_menubar() {
+    const menubar = document.getElementById('menubar');const menubar_div = document.createElement('div');menubar_div.id = 'menubar_div';const menubar_logo = document.createElement('div');menubar_logo.id = 'menubar_logo';menubar_logo.style = 'display: flex;';menubar_logo.onclick = () => {toggle_menubar(menubar_logo);};const menubar_logo_img = document.createElement('img');menubar_logo_img.src = '../homepage/assets/mb_icon0.svg';menubar_logo.appendChild(menubar_logo_img);menubar_div.appendChild(menubar_logo);const menubar_items = document.createElement('div');menubar_items.id = 'menubar_items';menubar_items.style = 'display: none;';
+    const menubarClose = document.createElement('a');menubarClose.onclick = () => {toggle_menubar(menubarClose);};const menubarCloseImg = document.createElement('img');menubarCloseImg.src = '../homepage/assets/icon_close_00.png';menubarClose.appendChild(menubarCloseImg);menubar_items.appendChild(menubarClose);
+    const menubar_home = document.createElement('a');menubar_home.id = 'menubar_home';menubar_home.href = '../homepage/index.html';const menubar_home_img = document.createElement('img');menubar_home_img.src = '../homepage/assets/mb_icon0.svg';menubar_home.appendChild(menubar_home_img);menubar_items.appendChild(menubar_home);
+    const menubarMovieBase = document.createElement('a');menubarMovieBase.href = 'index.html';const menubarMovieBaseImg = document.createElement('img');menubarMovieBaseImg.src = 'icons/icon0.png';menubarMovieBase.appendChild(menubarMovieBaseImg);menubar_items.appendChild(menubarMovieBase);
+    const menubarSeriesBase = document.createElement('a');menubarSeriesBase.href = '../seriesbase/index.html';const menubarSeriesBaseImg = document.createElement('img');menubarSeriesBaseImg.src = '../seriesbase/icons/icon0.png';menubarSeriesBase.appendChild(menubarSeriesBaseImg);menubar_items.appendChild(menubarSeriesBase);
+    const menubar_games = document.createElement('a');menubar_games.id = 'menubar_games';menubar_games.href = '../homepage/index.html';const menubar_games_img = document.createElement('img');menubar_games_img.src = '../homepage/assets/icon_controller_00.png';menubar_games.appendChild(menubar_games_img);
+    const menubarBooklets = document.createElement('a');menubarBooklets.href = '../homepage/index.html';const menubarBookletsImg = document.createElement('img');menubarBookletsImg.src = '../homepage/assets/icon_booklets_00.png';menubarBooklets.appendChild(menubarBookletsImg);menubar_items.appendChild(menubarBooklets);
+    const menubarSongBase = document.createElement('a');menubarSongBase.href = '../homepage/index.html';const menubarSongBaseImg = document.createElement('img');menubarSongBaseImg.src = '../homepage/assets/icon_books_00.png';menubarSongBase.appendChild(menubarSongBaseImg);menubar_items.appendChild(menubarSongBase);
+    const menubar_tools = document.createElement('a');menubar_tools.id = 'menubar_tools';menubar_tools.href = '../homepage/index.html';const menubar_tools_img = document.createElement('img');menubar_tools_img.src = '../homepage/assets/icon_tools_00.png';menubar_tools.appendChild(menubar_tools_img);
+    const menubar_cooking = document.createElement('a');menubar_cooking.id = 'menubar_cooking';menubar_cooking.href = '../homepage/index.html';const menubar_cooking_img = document.createElement('img');menubar_cooking_img.src = '../cookingcorner/icons/icon0.png';menubar_cooking.appendChild(menubar_cooking_img);
+    if (windowMode === 'landscape') {menubar_items.appendChild(menubar_games);menubar_items.appendChild(menubar_tools);menubar_items.appendChild(menubar_cooking);}
+    menubar_div.appendChild(menubar_items);menubar.appendChild(menubar_div);document.addEventListener('click', (event) => {const menubar = document.getElementById('menubar');const menubar_logo = document.getElementById('menubar_logo');const menubar_items = document.getElementById('menubar_items');if (!menubar.contains(event.target)) {menubar_logo.style.display = 'flex';menubar_items.style.display = 'none';}});
+  }
+  function toggle_menubar(obj) {const menubar_logo = document.getElementById('menubar_logo');const menubar_items = document.getElementById('menubar_items');let visible = '';if (menubar_logo.style.display === 'flex' && obj.id == menubar_logo.id) {menubar_logo.style.display = 'none';menubar_items.style.display = 'flex';} else {menubar_logo.style.display = 'flex';menubar_items.style.display = 'none';}}
+  
+  function windowModeReorder() {
+    const menubar = document.getElementById('menubar');if (document.querySelector("#menubar_div")) {menubar.removeChild(document.querySelector("#menubar_div"));init_menubar();}
+  }
+  const header = document.getElementById('header');
+
+  async function load_moviebase() {
+    try {const response = await fetch('movies.json');if (!response.ok) throw new Error('movies.json konnte nicht geladen werden.');current_data = await response.json();load_table_data(current_data);}
+    catch(err) {document.getElementById('output').innerHTML = '<h3>Fehler</h3><p>' + err.message + '</p>';console.error(err);}
+  }
+
+  function load_table_data(data) {
+    console.log('Einträge: ' + data.length)
+  }
+
+
+  function downloadImage(movie) {downloadFile(movie.poster, `${movie.filename}-poster.jpg`);}
+  function downloadNFO(movie) {downloadFile(`Movies/${movie.folder}/${movie.filename}.nfo`, `${movie.filename}.nfo`);}
+  function downloadFile(url, filename) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>

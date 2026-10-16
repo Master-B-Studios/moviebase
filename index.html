@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>MMB Movie-Base</title>
+    <title>MB Movie-Base</title>
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></meta>
     <link rel="icon" type="image/x-icon" href="../homepage/images/MB_Icon_02.svg"></link>
@@ -23,19 +23,22 @@
       #menubar_items a img {width: 2.6rem;height: 2.6rem;}
       #menubar_items a:hover {filter: brightness(200%);}
 
-      .headerLandscape {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: min-content min-content min-content;grid-template-rows: min-content;}
+      .headerLandscape {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: min-content min-content min-content min-content;grid-template-rows: min-content;}
       .sortButtonLandscape {height: 3rem;grid-column: 1;grid-row: 1;margin: 0.5rem 0 0.5rem 4.1rem;padding: 0 0.5rem 0 1rem;white-space: pre;}
       .sortButtonLandscape .sort_arrow {position: relative;top: 0.1rem;}
       .randomButtonLandscape {height: 3rem;grid-column: 2;grid-row: 1;margin: 0.5rem 0 0 0.5rem;padding: 0 1rem;white-space: pre;}
       .searchContainerLandscape {width: auto;height: 4rem;grid-column: 3;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
       .searchContainerLandscape input {width: auto;height: 3.15rem;margin: 0;padding: 0 0.5rem;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;color: #dbdbdb;cursor: text;}
+      .addMovieLandscape {width: 3rem;height: 3rem;grid-column: 4;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
+      .addMovieLandscape img {width: 80%;height: 80%;}
 
       .headerPortrait {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: auto min-content;grid-template-rows: min-content min-content;}
       .sortButtonPortrait {width: auto;height: 3rem;grid-column: 1 / span 2;grid-row: 1;margin: 0.5rem 0.5rem 0.5rem 4.1rem;padding: 0 0.5rem 0 1rem;white-space: pre;}
       .sortButtonPortrait .sort_arrow {position: relative;top: 0.1rem;}
+      .randomButtonPortrait {width: auto;height: 3rem;grid-column: 2;grid-row: 2;margin: 0 0.5rem 0 0;padding: 0 1rem;white-space: pre;}
       .searchContainerPortrait {width: 100%;height: 4rem;grid-column: 1;grid-row: 2;text-align: center;margin: 0;padding: 0;}
       .searchContainerPortrait input {width: calc(100% - 1rem);height: 3.15rem;margin: 0;padding: 0 0.5rem;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;color: #dbdbdb;cursor: text;}
-      .randomButtonPortrait {width: auto;height: 3rem;grid-column: 2;grid-row: 2;margin: 0 0.5rem 0 0;padding: 0 1rem;white-space: pre;}
+      .addMoviePortrait {display: none;}
       #search_container input:focus {background-color: #222222;outline: none;border: 1px solid #666666;}
       #search_container input::-webkit-search-cancel-button {filter: invert(50%) brightness(150%);cursor: pointer;}
 
@@ -44,8 +47,8 @@
       #sort_overlay_title {width: 100%;text-align: center;font-size: 1.5rem;margin-bottom: 0.5rem;color: #dbdbdb;}
       .sort_option {width: 15rem;min-height: 3rem;}
 
-      #main {width: auto;height: auto;background-color: #00000000;z-index: 100;}
-      .outputLandscape {margin: 4.25rem 0.5rem 1rem 0.5rem;z-index: 100;}
+      #main {width: 100vw;height: auto;background-color: #00000000;z-index: 100;margin: auto;}
+      .outputLandscape {margin: 4.25rem;z-index: 100;}
       .outputPortrait {margin: 7.75rem 0.5rem 1rem 0.5rem;z-index: 100;}
 
       .group_button {display: none;}
@@ -133,29 +136,46 @@
       .overlayPlotPortrait {grid-column: 1 / span 5;grid-row: 2;margin: 0 0.5rem 0.5rem 0.5rem;padding: 0.5rem;text-align: justify;line-height: 1rem;font-size: 0.7rem;font-family: Verdana, Geneva, Tahoma, sans-serif;}
   </style>
   </head>
-  <body onload="init_menubar();windowModeCheck();load_moviebase();">
+  <body onload="windowModeCheck();init_menubar();load_moviebase();">
     <div id="menubar"></div><div id="header"></div>
     <div id="main"><div id="output"></div></div>
   </body>
 </html>
 <script>
-  function init_menubar() {const menubar = document.getElementById('menubar');const menubar_div = document.createElement('div');menubar_div.id = 'menubar_div';const menubar_logo = document.createElement('div');menubar_logo.id = 'menubar_logo';menubar_logo.style = 'display: flex;';menubar_logo.onclick = () => {toggle_menubar(menubar_logo);};const menubar_logo_img = document.createElement('img');menubar_logo_img.src = '../homepage/assets/mb_icon0.svg';menubar_logo.appendChild(menubar_logo_img);menubar_div.appendChild(menubar_logo);const menubar_items = document.createElement('div');menubar_items.id = 'menubar_items';menubar_items.style = 'display: none;';const menubar_close = document.createElement('a');menubar_close.id = 'menubar_close';menubar_close.onclick = () => {toggle_menubar(menubar_close);};const menubar_close_img = document.createElement('img');menubar_close_img.src = '../homepage/assets/icon_close_00.png';menubar_close.appendChild(menubar_close_img);menubar_items.appendChild(menubar_close);const menubar_home = document.createElement('a');menubar_home.id = 'menubar_home';menubar_home.href = '../homepage/index.html';const menubar_home_img = document.createElement('img');menubar_home_img.src = '../homepage/assets/mb_icon0.svg';menubar_home.appendChild(menubar_home_img);menubar_items.appendChild(menubar_home);const menubar_tools = document.createElement('a');menubar_tools.id = 'menubar_tools';menubar_tools.href = '../homepage/index.html';const menubar_tools_img = document.createElement('img');menubar_tools_img.src = '../homepage/assets/icon_tools_00.png';menubar_tools.appendChild(menubar_tools_img);menubar_items.appendChild(menubar_tools);const menubar_games = document.createElement('a');menubar_games.id = 'menubar_games';menubar_games.href = '../homepage/index.html';const menubar_games_img = document.createElement('img');menubar_games_img.src = '../homepage/assets/icon_controller_00.png';menubar_games.appendChild(menubar_games_img);menubar_items.appendChild(menubar_games);const menubar_cooking = document.createElement('a');menubar_cooking.id = 'menubar_cooking';menubar_cooking.href = '../homepage/index.html';const menubar_cooking_img = document.createElement('img');menubar_cooking_img.src = '../cookingcorner/icons/icon0.png';menubar_cooking.appendChild(menubar_cooking_img);menubar_items.appendChild(menubar_cooking);menubar_div.appendChild(menubar_items);menubar.appendChild(menubar_div);document.addEventListener('click', (event) => {const menubar = document.getElementById('menubar');const menubar_logo = document.getElementById('menubar_logo');const menubar_items = document.getElementById('menubar_items');if (!menubar.contains(event.target)) {menubar_logo.style.display = 'flex';menubar_items.style.display = 'none';}});}
-  function toggle_menubar(obj) {const menubar_logo = document.getElementById('menubar_logo');const menubar_items = document.getElementById('menubar_items');let visible = '';if (menubar_logo.style.display === 'flex' && obj.id == menubar_logo.id) {menubar_logo.style.display = 'none';menubar_items.style.display = 'flex';} else {menubar_logo.style.display = 'flex';menubar_items.style.display = 'none';}}
   let windowMode = '';window.addEventListener('resize', () => {windowModeCheck();windowModeReorder();}); function windowModeCheck() {if (window.innerWidth >= window.innerHeight) {windowMode = 'landscape';} else {windowMode = 'portrait';}}
+  function init_menubar() {
+    const menubar = document.getElementById('menubar');const menubar_div = document.createElement('div');menubar_div.id = 'menubar_div';const menubar_logo = document.createElement('div');menubar_logo.id = 'menubar_logo';menubar_logo.style = 'display: flex;';menubar_logo.onclick = () => {toggle_menubar(menubar_logo);};const menubar_logo_img = document.createElement('img');menubar_logo_img.src = '../homepage/assets/mb_icon0.svg';menubar_logo.appendChild(menubar_logo_img);menubar_div.appendChild(menubar_logo);const menubar_items = document.createElement('div');menubar_items.id = 'menubar_items';menubar_items.style = 'display: none;';
+    const menubarClose = document.createElement('a');menubarClose.onclick = () => {toggle_menubar(menubarClose);};const menubarCloseImg = document.createElement('img');menubarCloseImg.src = '../homepage/assets/icon_close_00.png';menubarClose.appendChild(menubarCloseImg);menubar_items.appendChild(menubarClose);
+    const menubar_home = document.createElement('a');menubar_home.href = '../homepage/index.html';const menubar_home_img = document.createElement('img');menubar_home_img.src = '../homepage/assets/mb_icon0.svg';menubar_home.appendChild(menubar_home_img);menubar_items.appendChild(menubar_home);
+    const menubarMovieBase = document.createElement('a');menubarMovieBase.href = 'index.html';const menubarMovieBaseImg = document.createElement('img');menubarMovieBaseImg.src = 'icons/icon0.png';menubarMovieBase.appendChild(menubarMovieBaseImg);menubar_items.appendChild(menubarMovieBase);
+    const menubarSeriesBase = document.createElement('a');menubarSeriesBase.href = '../seriesbase/index.html';const menubarSeriesBaseImg = document.createElement('img');menubarSeriesBaseImg.src = '../seriesbase/icons/icon0.png';menubarSeriesBase.appendChild(menubarSeriesBaseImg);menubar_items.appendChild(menubarSeriesBase);
+    const menubar_games = document.createElement('a');menubar_games.id = 'menubar_games';menubar_games.href = '../homepage/index.html';const menubar_games_img = document.createElement('img');menubar_games_img.src = '../homepage/assets/icon_controller_00.png';menubar_games.appendChild(menubar_games_img);
+    const menubarBooklets = document.createElement('a');menubarBooklets.href = '../homepage/index.html';const menubarBookletsImg = document.createElement('img');menubarBookletsImg.src = '../homepage/assets/icon_booklets_00.png';menubarBooklets.appendChild(menubarBookletsImg);menubar_items.appendChild(menubarBooklets);
+    const menubarSongBase = document.createElement('a');menubarSongBase.href = '../homepage/index.html';const menubarSongBaseImg = document.createElement('img');menubarSongBaseImg.src = '../homepage/assets/icon_books_00.png';menubarSongBase.appendChild(menubarSongBaseImg);menubar_items.appendChild(menubarSongBase);
+    const menubar_tools = document.createElement('a');menubar_tools.id = 'menubar_tools';menubar_tools.href = '../homepage/index.html';const menubar_tools_img = document.createElement('img');menubar_tools_img.src = '../homepage/assets/icon_tools_00.png';menubar_tools.appendChild(menubar_tools_img);
+    const menubar_cooking = document.createElement('a');menubar_cooking.id = 'menubar_cooking';menubar_cooking.href = '../homepage/index.html';const menubar_cooking_img = document.createElement('img');menubar_cooking_img.src = '../cookingcorner/icons/icon0.png';menubar_cooking.appendChild(menubar_cooking_img);
+    if (windowMode === 'landscape') {menubar_items.appendChild(menubar_games);menubar_items.appendChild(menubar_tools);menubar_items.appendChild(menubar_cooking);}
+    menubar_div.appendChild(menubar_items);menubar.appendChild(menubar_div);document.addEventListener('click', (event) => {const menubar = document.getElementById('menubar');const menubar_logo = document.getElementById('menubar_logo');const menubar_items = document.getElementById('menubar_items');if (!menubar.contains(event.target)) {menubar_logo.style.display = 'flex';menubar_items.style.display = 'none';}});
+  }
+  function toggle_menubar(obj) {const menubar_logo = document.getElementById('menubar_logo');const menubar_items = document.getElementById('menubar_items');let visible = '';if (menubar_logo.style.display === 'flex' && obj.id == menubar_logo.id) {menubar_logo.style.display = 'none';menubar_items.style.display = 'flex';} else {menubar_logo.style.display = 'flex';menubar_items.style.display = 'none';}}
+  
   function windowModeReorder() {
+    const menubar = document.getElementById('menubar');if (document.querySelector("#menubar_div")) {menubar.removeChild(document.querySelector("#menubar_div"));init_menubar();}
     if (windowMode === 'landscape') {
-      document.querySelector('.headerPortrait').className = 'headerLandscape';
-      document.querySelector('.sortButtonPortrait').className = 'sortButtonLandscape mb_button';
-      document.querySelector('.randomButtonPortrait').className = 'randomButtonLandscape mb_button';
-      document.querySelector('.searchContainerPortrait').className = 'searchContainerLandscape';
-      document.querySelector('.outputPortrait').className = 'outputLandscape';
+      if (document.querySelector('.headerPortrait')) {document.querySelector('.headerPortrait').className = 'headerLandscape';}
+      if (document.querySelector('.sortButtonPortrait')) {document.querySelector('.sortButtonPortrait').className = 'sortButtonLandscape mb_button';}
+      if (document.querySelector('.randomButtonPortrait')) {document.querySelector('.randomButtonPortrait').className = 'randomButtonLandscape mb_button';}
+      if (document.querySelector('.searchContainerPortrait')) {document.querySelector('.searchContainerPortrait').className = 'searchContainerLandscape';}
+      if (document.querySelector('.addMoviePortrait')) {document.querySelector('.addMoviePortrait').className = 'addMovieLandscape mb_button';}
+      if (document.querySelector('.outputPortrait')) {document.querySelector('.outputPortrait').className = 'outputLandscape';}
     }
     else {
-      document.querySelector('.headerLandscape').className = 'headerPortrait';
-      document.querySelector('.sortButtonLandscape').className = 'sortButtonPortrait mb_button';
-      document.querySelector('.randomButtonLandscape').className = 'randomButtonPortrait mb_button';
-      document.querySelector('.searchContainerLandscape').className = 'searchContainerPortrait';
-      document.querySelector('.outputLandscape').className = 'outputPortrait';
+      if (document.querySelector('.headerLandscape')) {document.querySelector('.headerLandscape').className = 'headerPortrait';}
+      if (document.querySelector('.sortButtonLandscape')) {document.querySelector('.sortButtonLandscape').className = 'sortButtonPortrait mb_button';}
+      if (document.querySelector('.randomButtonLandscape')) {document.querySelector('.randomButtonLandscape').className = 'randomButtonPortrait mb_button';}
+      if (document.querySelector('.searchContainerLandscape')) {document.querySelector('.searchContainerLandscape').className = 'searchContainerPortrait';}
+      if (document.querySelector('.addMovieLandscape')) {document.querySelector('.addMovieLandscape').className = 'addMoviePortrait mb_button';}
+      if (document.querySelector('.outputLandscape')) {document.querySelector('.outputLandscape').className = 'outputPortrait';}
     }
   }
   
@@ -184,12 +204,30 @@
     const sort_arrow = document.createElement('div');
     sort_arrow.className = 'sort_arrow';
     sort_arrow.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-
     sortButton.appendChild(sortButton_text);
     sortButton.appendChild(sort_arrow);
-    
     header.appendChild(sortButton);
 
+    const sort_overlay = document.createElement('div');
+    sort_overlay.id = 'sort_overlay';
+    const sort_overlay_content = document.createElement('div');
+    sort_overlay_content.id = 'sort_overlay_content';
+    const sort_overlay_title = document.createElement('div');
+    sort_overlay_title.id = 'sort_overlay_title';
+    sort_overlay_title.textContent = 'Sortieren Nach';
+    sort_overlay_content.appendChild(sort_overlay_title);
+    sort_overlay.appendChild(sort_overlay_content);
+    const sort_options = ['Nummer','Name','0-9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    sort_options.forEach(z => {
+      const option_button = document.createElement('div');
+      option_button.className = 'sort_option mb_button';
+      option_button.textContent = z;
+      option_button.onclick = () => {sort_group(z);sort_overlay.style.display = 'none';};
+      sort_overlay_content.appendChild(option_button);
+    });
+    sort_overlay.onclick = (event) => {if (event.target === sort_overlay) {sort_overlay.style.display = 'none';}};
+    document.body.appendChild(sort_overlay);
+    
     const randomButton = document.createElement('div');
     randomButton.id = 'randomButton';
     if (windowMode === 'landscape') {randomButton.className = 'randomButtonLandscape mb_button';}
@@ -202,37 +240,11 @@
       load_table_data([random_movie], 'Zufall');
       randomButton.blur();
     };
-
-    const sort_overlay = document.createElement('div');
-    sort_overlay.id = 'sort_overlay';
-    const sort_overlay_content = document.createElement('div');
-    sort_overlay_content.id = 'sort_overlay_content';
-    const sort_overlay_title = document.createElement('div');
-    sort_overlay_title.id = 'sort_overlay_title';
-    sort_overlay_title.textContent = 'Sortieren Nach';
-    sort_overlay_content.appendChild(sort_overlay_title);
-    sort_overlay.appendChild(sort_overlay_content);
-
-
-    const sort_options = ['Nummer','Name','0-9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    sort_options.forEach(z => {
-      const option_button = document.createElement('div');
-      option_button.className = 'sort_option mb_button';
-      option_button.textContent = z;
-      option_button.onclick = () => {sort_group(z);sort_overlay.style.display = 'none';};
-      sort_overlay_content.appendChild(option_button);
-    });
-
-    sort_overlay.onclick = (event) => {if (event.target === sort_overlay) {sort_overlay.style.display = 'none';}};
-
     header.appendChild(randomButton);
-
-    const output = document.querySelector('#output');
-    
-    document.body.appendChild(sort_overlay);
 
     set_group_active();
 
+    const output = document.getElementById('output');
     const search_container = document.createElement('div');
     search_container.id = 'search_container';
     if (windowMode === 'landscape') {search_container.className = 'searchContainerLandscape';output.className = 'outputLandscape';}
@@ -244,6 +256,13 @@
     search_input.addEventListener('input', () => {search_in_table_data(search_input.value);});
     search_container.appendChild(search_input);
     header.appendChild(search_container);
+
+    const addMovie = document.createElement('a');
+    if (windowMode === 'landscape') {addMovie.className = 'addMovieLandscape mb_button';}
+    else {addMovie.className = 'addMoviePortrait mb_button';}
+    addMovie.innerHTML = '<img src="index_moviecreator.png" loading="lazy">'
+    addMovie.href = 'index_moviecreator.html';
+    header.appendChild(addMovie);
   }
   
   function sort_group(z) {
