@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Der Herr Der Ringe</title>
+   <originaltitle>Der Herr Der Ringe</originaltitle>
+   <plot>Der junge Hobbit Frodo Beutlin bekommt von Gandalf die Aufgabe, den Einen Ring zu zerstören, der die Macht des Dunklen Herrschers Sauron enthält. Frodo schließt sich der Gemeinschaft des Rings an, zu der auch seine Freunde Sam, Merry und Pippin, der Grenzgänger Aragorn, der Krieger Boromir, der Elf Legolas, der Zwerg Gimli und Gandalf der Graue gehören. Die Gemeinschaft bricht nach Bruchtal auf, wird aber von den Schwarzen Reitern verfolgt. Sie durchqueren die gefährlichen Zwergenminen von Moria, treffen auf den undurchschaubaren Gollum und kämpfen in der Schlacht von Helms Klamm.</plot>
+   <runtime>132</runtime>
+   <mpaa>FSK-12</mpaa>
+   <id>1884</id>
+   <uniqueid type="mbdb">1884</uniqueid>
+   <year>1978</year>
+</movie>

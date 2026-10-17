@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Jason Und Die Argonauten</title>
+   <originaltitle>Jason Und Die Argonauten</originaltitle>
+   <plot>Der titelgebende griechische Held Jason ist auf der Suche nach dem goldenen Vlies und führt die Argonauten dabei in eine Welt voller Ungeheuer und Gefahren. So muss sowohl die siebenköpfige Hydra bezwungen werden, als auch der unbesiegbare Bronzegott.</plot>
+   <runtime>104</runtime>
+   <mpaa>FSK-12</mpaa>
+   <id>1887</id>
+   <uniqueid type="mbdb">1887</uniqueid>
+   <year>1963</year>
+</movie>
