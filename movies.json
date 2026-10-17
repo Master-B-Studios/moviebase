@@ -20997,5 +20997,49 @@
         "folder": "1909",
         "filename": "Tropic Thunder",
         "poster": "movies/1909/Tropic Thunder-poster.jpg"
+    },
+    {
+        "id": "1910",
+        "title": "Und Täglich Grüsst Das Murmeltier",
+        "plot": "Es ist der 2. Februar, Murmeltiertag: Für eine Reportage über das alljährliche Wettervorhersage-Ritual verschlägt es den sarkastischen, verbitterten, stets miesgelaunten und unfreundlichen Wettermann Phil Connors, seine Produzentin Rita und den Kameramann Larry in das kleine Provinznest Punxsutawney. Ein ganz normaler Tag. Phil berichtet vom Murmeltier, das alljährlich aus seinem Bau gelockt wird, um das Wetter der kommenden Zeit vorherzusagen. Nebenbei flirtet er ein wenig mit Rita und gibt sich gewohnt sarkastisch-zynisch. Als Phil jedoch am darauffolgenden Tag aufwacht, ist dummerweise wieder der 2. Februar und außer ihm scheint niemand diese Wiederholung zu bemerken.",
+        "runtime": "101",
+        "mpaa": "FSK-12",
+        "year": "1993",
+        "folder": "1910",
+        "filename": "Und Täglich Grüsst Das Murmeltier",
+        "poster": "movies/1910/Und Täglich Grüsst Das Murmeltier-poster.jpg"
+    },
+    {
+        "id": "1912",
+        "title": "Venom 3 - The Last Dance",
+        "plot": "Als ihm nach dem Triumph über Carnage der Mord am Polizisten Patrick Mulliganin in die Schuhe geschoben wird, ist Reporter Eddie Brock mitsamt seinem Alien-Symbionten Venom endgültig auf der Flucht vor dem Gesetz. Auch eine geheime Spezialeinheit des US-Militärs unter Führung des skrupellosen General Rex Strickland hat es auf Eddie oder vielmehr auf Venom abgesehen. Doch das ist längst nicht die größte Gefahr für das ungleiche Duo. Verbannt in ein fernes kosmisches Gefängnis, entsendet der Symbionten-Schöpfer Knull mehrere blutrünstige Kreaturen in die Weiten des Universums, um die beiden ausfindig zu machen, da sie den Schlüssel in sich tragen, der den finsteren außerirdischen Herrscher von seinen Fesseln befreien würde. Bald steht nicht nur das Leben von Eddie und Venom, sondern das Schicksal der gesamten Welt auf dem Spiel...",
+        "runtime": "110",
+        "mpaa": "FSK-12",
+        "year": "2024",
+        "folder": "1912",
+        "filename": "Venom 3 - The Last Dance",
+        "poster": "movies/1912/Venom 3 - The Last Dance-poster.jpg"
+    },
+    {
+        "id": "1913",
+        "title": "Hasch Mich Ich Bin Der Mörder",
+        "plot": "Antoine Brisebard ist Autor und Erpressungsopfer. In seinem neuen Buch verarbeitet er die Geschehnisse, in dem seine Hauptfigur den Erpresser erschießt. Und eines Tages bekommt er tatsächlich Besuch von dem Gangster, den er aus Zufall erschießt. Da hat die Polizei natürlich viele Fragen.",
+        "runtime": "85",
+        "mpaa": "FSK-12",
+        "year": "1971",
+        "folder": "1913",
+        "filename": "Hasch Mich Ich Bin Der Mörder",
+        "poster": "movies/1913/Hasch Mich Ich Bin Der Mörder-poster.jpg"
+    },
+    {
+        "id": "1914",
+        "title": "Triple XXX 2",
+        "plot": "Kurz nachdem NSA-Agent Augustis Gibbons schon einmal erfolgreich einen Abtrünnigen für einen besonders brisanten Sondereinsatz rekrutiert hat, braucht er erneut die Hilfe eines Außenseiters und heuert Darius Stone als neuen Undercover-Agenten an. Unter Gibbons Leitung lernt der ehemalige Navy-Seal alle Tricks, die ein Triple-X-Agent für spezielle, hochexplosive Einsätze braucht. Seine Mission ist der Kampf gegen eine gefährliche militärische Splittergruppe, deren Einfluss unter der Führung von George Deckert bis in die höchsten Regierungskreise in Washington reicht. Ihr Plan: Um einen Staatsstreich herbeizurufen, soll der Präsident ermordet werden.",
+        "runtime": "101",
+        "mpaa": "FSK-16",
+        "year": "2005",
+        "folder": "1914",
+        "filename": "Triple XXX 2",
+        "poster": "movies/1914/Triple XXX 2-poster.jpg"
     }
 ]
