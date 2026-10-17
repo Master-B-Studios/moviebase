@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Popeye</title>
+   <originaltitle>Popeye</originaltitle>
+   <plot>Popeye ist meinem seinem Boot unterwegs. Im Fischerdorf Sweet Haven lernt er die hübsche Olive kennen - und einen muskelbepackten Bösewicht, der die Einwohner des Dorfes erpresst. Das kann Popeye natürlich nicht durchgehen lassen...</plot>
+   <runtime>114</runtime>
+   <mpaa>FSK-6</mpaa>
+   <id>1895</id>
+   <uniqueid type="mbdb">1895</uniqueid>
+   <year>1980</year>
+</movie>

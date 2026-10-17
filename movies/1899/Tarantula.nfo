@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<movie>
+   <title>Tarantula</title>
+   <originaltitle>Tarantula</originaltitle>
+   <plot>Der Biologe Professor Gerald Deemer arbeitet an einem Wachstumsbeschleuniger, um z. B. Tiere wie Rinder und Schweine schneller und größer wachsen zu lassen um das aufkommende Ernährungsproblem der Bevölkerung zu beheben. In seinem Labor experimentiert er an diversen übergroßen Tieren. Bei einem Brand gelingt eine giftigen Riesentarantel unbemerkt die Flucht. Bald erreicht das Tier die monströsen Ausmaße eines Hochhauses und droht ganze Städte auszurotten. Mit Napalm-Bomben bewaffnet rückt die amerikanische Luftwaffe an, um dem Biest den Garaus zu machen...</plot>
+   <runtime>80</runtime>
+   <mpaa>FSK-12</mpaa>
+   <id>1899</id>
+   <uniqueid type="mbdb">1899</uniqueid>
+   <year>1955</year>
+</movie>
