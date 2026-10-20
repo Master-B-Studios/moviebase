@@ -57,17 +57,25 @@
 
 
       .cardContainer {display: grid;grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));gap: 1.5rem;}
-      .movieCard {color: #ffffff;width: auto;height: auto;display: grid;grid-template-columns: auto auto;grid-template-rows: min-content auto min-content;background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;position: relative;top: 0;margin: 0;cursor: pointer;transition: all 0.6s;}
-      .movieCard:hover {border-color: #dddddd;top: -0.5rem;}
+      .movieCard {color: #dbdbdb;width: auto;height: auto;display: grid;grid-template-columns: auto auto;grid-template-rows: min-content auto min-content;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;position: relative;top: 0;margin: 0;cursor: pointer;transition: all 0.6s;}
+      .movieCard:hover {border-color: #999999;top: -0.5rem;}
+      .movieCard:hover .movieTitle {color: #999999;}
+      .movieCard:hover .movieNumber {color: #999999;}
+      .movieCard:hover .movieNumber svg {color: #999999;}
+      .movieCard:hover .movieYear {color: #999999;}
+      .movieCard:hover .movieYear svg {color: #999999;}
+      .movieCard:hover .movieOverlay1 {box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;}
+      .movieCard:hover .movieOverlay2 {opacity: 0;}
       .moviePoster {grid-column: 1 / span 2;grid-row: 1;width: calc(100%);height: auto;aspect-ratio: 2/3;display: flex;justify-content: center;align-items: center;border-top-left-radius: 0.5rem;border-top-right-radius: 0.5rem;}
-      .moviePoster img {width: 100%;height: auto;object-fit: contain;border-top-left-radius: 0.5rem;border-top-right-radius: 0.5rem;}
-      .movieTitle {grid-column: 1 / span 2;grid-row: 2;font-size: 0.7rem;margin: 0.5rem;line-height: 1rem;display: flex;align-items: center;justify-content: center;text-align: center;}
-      .movieNumber {grid-column: 1;grid-row: 3;font-size: 0.7rem;margin: 0.5rem;line-height: 1rem;white-space: nowrap;display: flex;align-items: center;justify-content: center;}
-      .movieNumber svg {position: relative;left: -0.25rem;width: 0.7rem;height: 0.7rem;}
-      .movieYear {grid-column: 2;grid-row: 3;font-size: 0.7rem;margin: 0.5rem;line-height: 1rem;white-space: nowrap;display: flex;align-items: center;justify-content: center;}
-      .movieYear svg {position: relative;left: -0.25rem;width: 0.7rem;height: 0.7rem;}
-      .movieOverlay {grid-column: 1 / span 2;grid-row: 1 / span 3;z-index: 1000;border-radius: 0.5rem;background: linear-gradient(50deg, #00000000, #00000000, #00000066, #00000000, #00000000, #00000000, #00000099, #00000000);transition: all 0.8s;}
-      .movieOverlay:hover {opacity: 0;}
+      .moviePoster img {width: 100%;height: auto;object-fit: contain;border-top-left-radius: 0.5rem;border-top-right-radius: 0.5rem;background: linear-gradient(50deg, #00000000, #00000000, #00000066, #00000000, #00000000, #00000000, #00000099, #00000000);}
+      .moviePosterOverlay {grid-column: 1 / span 2;grid-row: 2;height: 1rem;position: relative;top: -1rem;background: linear-gradient(180deg, #22222200, #22222222, #22222244, #22222299, #222222ff);}
+      .movieTitle {grid-column: 1 / span 2;grid-row: 2;font-size: 0.7rem;margin: 0.5rem 0.5rem 0 0.5rem;line-height: 1rem;display: flex;align-items: center;justify-content: center;text-align: center;color: #dbdbdb;transition: all 0.6s;}
+      .movieNumber {grid-column: 1;grid-row: 3;font-size: 0.7rem;margin: 0.5rem;line-height: 1rem;white-space: nowrap;display: flex;align-items: center;justify-content: center;color: #dbdbdb;transition: all 0.6s;}
+      .movieNumber svg {position: relative;left: -0.25rem;width: 0.7rem;height: 0.7rem;color: #dbdbdb;transition: all 0.6s;}
+      .movieYear {grid-column: 2;grid-row: 3;font-size: 0.7rem;margin: 0.5rem;line-height: 1rem;white-space: nowrap;display: flex;align-items: center;justify-content: center;color: #dbdbdb;transition: all 0.6s;}
+      .movieYear svg {position: relative;left: -0.25rem;width: 0.7rem;height: 0.7rem;color: #dbdbdb;transition: all 0.6s;}
+      .movieOverlay1 {grid-column: 1 / span 2;grid-row: 1 / span 3;z-index: 1000;border-radius: 0.5rem;box-shadow: rgba(255, 255, 255, 0.3) 2px 2px 6px 1px inset;transition: all 0.8s;}
+      .movieOverlay2 {grid-column: 1 / span 2;grid-row: 1 / span 3;z-index: 1000;border-radius: 0.5rem;background: linear-gradient(50deg, #00000000, #00000000, #00000066, #00000000, #00000000, #00000000, #00000099, #00000000);transition: all 0.8s;}
       
       
       .overlayBase {width: 100vw;height: 100vh;background-color: #000000cc;position: fixed;z-index: 9099;inset: 0;}
@@ -353,6 +361,9 @@
       const moviePoster = document.createElement('div');
       moviePoster.className = 'moviePoster';
       moviePoster.innerHTML = '<img src="' + row.poster + '" loading="lazy">';
+
+      const moviePosterOverlay = document.createElement('div');
+      moviePosterOverlay.className = 'moviePosterOverlay';
       
       const movieNumber = document.createElement('div');
       movieNumber.className = 'movieNumber';
@@ -366,15 +377,21 @@
       movieTitle.className = 'movieTitle';
       movieTitle.innerHTML = row.title;
       
-      const overlay = document.createElement('div');
-      overlay.className = 'movieOverlay';
-      overlay.onclick = () => createOverlay(row);
+      const movieOverlay1 = document.createElement('div');
+      movieOverlay1.className = 'movieOverlay1';
+      movieOverlay1.onclick = () => createOverlay(row);
+
+      const movieOverlay2 = document.createElement('div');
+      movieOverlay2.className = 'movieOverlay2';
+      movieOverlay2.onclick = () => createOverlay(row);
       
       card.appendChild(moviePoster);
+      card.appendChild(moviePosterOverlay);
       card.appendChild(movieNumber);
       card.appendChild(movieYear);
       card.appendChild(movieTitle);
-      card.appendChild(overlay);
+      card.appendChild(movieOverlay1);
+      card.appendChild(movieOverlay2);
       
       cardContainer.appendChild(card);
     });
