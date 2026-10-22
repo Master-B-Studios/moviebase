@@ -7,24 +7,20 @@
     <link rel="icon" type="image/x-icon" href="../homepage/images/MB_Icon_02.svg"></link>
     <style>
       body {display: grid;grid-template-columns: min-content auto;grid-template-rows: 100vh;background-color: #000000;margin: 0;padding: 0;overflow-y: scroll;color: #dbdbdb;font-size: 1rem;font-family: Arial, Helvetica, sans-serif;-webkit-tap-highlight-color: transparent;}
-      .sidebar {grid-column: 1;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;background: linear-gradient(50deg, #22222299, #11111144, #22222299, #11111144);border-right: 0.01rem solid #999999;}
-      .sidebar a,div {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .sidebar {grid-column: 1;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content;background: linear-gradient(50deg, #22222299, #11111144, #22222299, #11111144);border-right: 0.01rem solid #999999;}
+      .sidebar a {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
       .sidebar a:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
       .sidebar a svg {margin: 0 0.5rem 0 0;}
+      .sidebarSpacer {height: 3rem;}
       
       .main {grid-column: 2;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content;background: linear-gradient(50deg, #22222299, #33333344, #22222299, #33333344);}
 
-      .sortButton {height: 3rem;grid-column: 1;grid-row: 1;margin: 0.5rem 0 0.5rem 4.1rem;padding: 0 0.5rem 0 1rem;white-space: pre;}
-      .sortButton .sort_arrow {position: relative;top: 0.1rem;}
-
-      .mb_button {display: flex;align-items: center;justify-content: center;background-color: #222222;box-shadow: rgba(255, 255, 255, 0.3) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #dbdbdb;cursor: pointer;transition: all 0.6s;}
-      .mb_button:focus {background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);} .mb_button:active {background-color: #222222dd;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);}
-      @media (hover: hover) and (pointer: fine) {.mb_button:hover {background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);} .mb_button:active {background-color: #222222dd;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border: 1px solid #444444;color: #999999;transform: scale(0.95);}}
-      .mb_text {display: flex;align-items: center;justify-content: center;background-color: #222222;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;cursor: default;transition: all 0.6s;} .mb_input {display: flex;align-items: center;justify-content: center;background-color: #222222cc;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;border-radius: 0.5rem;border: 1px solid #444444;color: #999999;cursor: text;transition: all 0.6s;}
+      .sortButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .sortButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .sortButtonText {margin: 0;}
+      .sortButtonArrow {margin: 0 0 0 1rem;}
 
 
-      .headerLandscape {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: min-content min-content min-content min-content;grid-template-rows: min-content;}
-      
       .randomButtonLandscape {height: 3rem;grid-column: 2;grid-row: 1;margin: 0.5rem 0 0 0.5rem;padding: 0 1rem;white-space: pre;}
       .searchContainerLandscape {width: auto;height: 4rem;grid-column: 3;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
       .searchContainerLandscape input {width: auto;height: 3.15rem;margin: 0;padding: 0 0.5rem;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;color: #dbdbdb;cursor: text;}
@@ -33,7 +29,7 @@
 
       .headerPortrait {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: auto min-content;grid-template-rows: min-content min-content;}
       .sortButtonPortrait {width: auto;height: 3rem;grid-column: 1 / span 2;grid-row: 1;margin: 0.5rem 0.5rem 0.5rem 4.1rem;padding: 0 0.5rem 0 1rem;white-space: pre;}
-      .sortButtonPortrait .sort_arrow {position: relative;top: 0.1rem;}
+      .sortButtonPortrait .sortButtonArrow {position: relative;top: 0.1rem;}
       .randomButtonPortrait {width: auto;height: 3rem;grid-column: 2;grid-row: 2;margin: 0 0.5rem 0 0;padding: 0 1rem;white-space: pre;}
       .searchContainerPortrait {width: 100%;height: 4rem;grid-column: 1;grid-row: 2;text-align: center;margin: 0;padding: 0;}
       .searchContainerPortrait input {width: calc(100% - 1rem);height: 3.15rem;margin: 0;padding: 0 0.5rem;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;color: #dbdbdb;cursor: text;}
@@ -153,6 +149,7 @@
       <a href="../seriesbase/index.html" id="games"><svg width="2rem" height="2rem" viewBox="0 0 512 512" fill="currentColor"><path d="M 114.00,118.74 C 119.87,117.32 137.88,118.00 145.00,118.00 145.00,118.00 204.00,118.00 204.00,118.00 204.00,118.00 394.00,118.00 394.00,118.00 394.00,118.00 460.00,118.00 460.00,118.00 473.41,118.18 475.98,127.39 476.00,139.00 476.00,139.00 476.00,303.00 476.00,303.00 475.99,308.32 475.30,315.69 471.69,319.89 469.12,322.89 460.14,326.97 457.17,322.67 455.78,320.65 456.00,316.43 456.00,314.00 456.00,314.00 456.00,172.00 456.00,172.00 455.99,167.25 455.50,159.30 453.64,155.00 452.08,151.41 449.72,148.75 446.98,146.02 439.79,138.82 434.94,137.02 425.00,137.00 425.00,137.00 181.00,137.00 181.00,137.00 181.00,137.00 114.00,137.00 114.00,137.00 111.82,137.00 108.15,137.21 106.31,135.98 99.46,131.40 109.66,121.01 114.00,118.74 Z M 79.09,152.85 C 84.85,151.22 102.02,152.00 109.00,152.00 109.00,152.00 168.00,152.00 168.00,152.00 168.00,152.00 360.00,152.00 360.00,152.00 360.00,152.00 425.00,152.00 425.00,152.00 427.05,152.00 430.05,151.91 431.96,152.51 439.71,154.94 441.99,163.94 442.00,171.00 442.00,171.00 442.00,339.00 442.00,339.00 441.99,345.80 441.09,350.69 435.56,355.43 433.05,357.58 426.52,359.56 424.02,356.40 422.77,354.81 423.00,350.99 423.00,349.00 423.00,349.00 423.00,205.00 423.00,205.00 422.97,185.99 411.97,171.03 392.00,171.00 392.00,171.00 147.00,171.00 147.00,171.00 147.00,171.00 80.00,171.00 80.00,171.00 77.82,171.00 74.15,171.21 72.31,169.98 65.88,165.68 75.02,155.29 79.09,152.85 Z M 51.00,185.09 C 51.00,185.09 84.00,185.09 84.00,185.09 84.00,185.09 143.00,185.09 143.00,185.09 143.00,185.09 326.00,185.09 326.00,185.09 326.00,185.09 374.00,185.09 374.00,185.09 380.82,185.00 392.91,184.39 398.98,186.80 406.72,189.87 407.99,196.64 408.00,204.00 408.00,204.00 408.00,349.00 408.00,349.00 408.00,349.00 408.00,367.00 408.00,367.00 408.00,376.03 408.56,387.51 398.00,391.40 396.07,392.11 393.08,392.00 391.00,392.00 391.00,392.00 118.00,392.00 118.00,392.00 118.00,392.00 52.00,392.00 52.00,392.00 38.75,391.82 36.02,382.49 36.00,371.00 36.00,371.00 36.00,230.00 36.00,230.00 36.00,219.92 33.83,196.27 41.14,189.23 44.19,186.30 47.08,186.08 51.00,185.09 Z M 211.00,211.37 C 191.83,216.08 182.72,218.30 168.00,233.00 165.07,235.92 161.01,239.77 158.61,243.00 152.34,251.42 147.60,262.73 145.51,273.00 145.51,273.00 144.63,280.00 144.63,280.00 143.89,283.84 143.03,284.41 143.03,289.00 143.03,293.95 144.17,294.85 144.80,299.00 147.79,318.66 157.04,337.08 173.00,349.55 186.59,360.16 207.66,367.74 225.00,366.96 225.00,366.96 240.00,364.63 240.00,364.63 251.29,362.33 264.72,355.97 273.00,347.98 286.93,334.56 294.03,325.13 298.21,306.00 299.49,300.16 299.96,301.79 300.00,295.00 300.00,295.00 300.00,283.00 300.00,283.00 299.96,276.45 297.32,267.18 295.00,261.00 282.10,226.71 246.97,206.78 211.00,211.37 Z M 210.00,226.59 C 215.33,225.62 222.45,225.97 228.00,226.00 248.65,226.13 269.27,242.22 278.34,260.00 282.23,267.61 284.98,275.39 285.00,284.00 285.03,297.60 285.57,299.69 280.82,313.00 278.23,320.27 273.36,326.56 268.00,332.00 260.02,340.09 259.27,341.16 249.00,345.98 239.63,350.39 229.26,352.13 219.00,352.00 212.90,351.92 213.43,351.28 208.00,350.15 170.53,342.41 149.94,302.29 162.89,267.00 168.07,252.89 179.60,239.36 193.00,232.40 197.60,230.01 204.92,228.02 210.00,226.59 Z M 196.00,251.53 C 188.37,254.76 186.11,262.24 186.00,270.00 186.00,270.00 186.00,307.00 186.00,307.00 186.02,314.96 187.16,324.58 197.00,324.98 207.13,325.39 208.67,322.05 217.00,317.55 217.00,317.55 245.00,302.50 245.00,302.50 250.02,299.93 257.76,295.51 257.66,289.00 257.56,282.46 252.07,278.84 247.00,276.01 247.00,276.01 213.00,257.91 213.00,257.91 207.50,254.88 202.54,250.78 196.00,251.53 Z M 202.60,271.11 C 207.78,269.79 214.44,275.46 219.00,277.92 222.41,279.75 234.32,284.73 235.26,288.15 236.16,291.49 231.29,293.34 229.00,294.50 229.00,294.50 212.00,303.96 212.00,303.96 210.29,304.88 205.96,307.21 204.15,307.22 200.82,307.22 201.05,303.36 201.00,301.00 201.00,301.00 201.00,279.00 201.00,279.00 201.01,275.59 200.49,273.89 202.60,271.11 Z"></path></svg>Games</a>
       <a href="../seriesbase/index.html" id="tools"><svg width="2rem" height="2rem" viewBox="0 0 512 512" fill="currentColor"><path d="M 114.00,118.74 C 119.87,117.32 137.88,118.00 145.00,118.00 145.00,118.00 204.00,118.00 204.00,118.00 204.00,118.00 394.00,118.00 394.00,118.00 394.00,118.00 460.00,118.00 460.00,118.00 473.41,118.18 475.98,127.39 476.00,139.00 476.00,139.00 476.00,303.00 476.00,303.00 475.99,308.32 475.30,315.69 471.69,319.89 469.12,322.89 460.14,326.97 457.17,322.67 455.78,320.65 456.00,316.43 456.00,314.00 456.00,314.00 456.00,172.00 456.00,172.00 455.99,167.25 455.50,159.30 453.64,155.00 452.08,151.41 449.72,148.75 446.98,146.02 439.79,138.82 434.94,137.02 425.00,137.00 425.00,137.00 181.00,137.00 181.00,137.00 181.00,137.00 114.00,137.00 114.00,137.00 111.82,137.00 108.15,137.21 106.31,135.98 99.46,131.40 109.66,121.01 114.00,118.74 Z M 79.09,152.85 C 84.85,151.22 102.02,152.00 109.00,152.00 109.00,152.00 168.00,152.00 168.00,152.00 168.00,152.00 360.00,152.00 360.00,152.00 360.00,152.00 425.00,152.00 425.00,152.00 427.05,152.00 430.05,151.91 431.96,152.51 439.71,154.94 441.99,163.94 442.00,171.00 442.00,171.00 442.00,339.00 442.00,339.00 441.99,345.80 441.09,350.69 435.56,355.43 433.05,357.58 426.52,359.56 424.02,356.40 422.77,354.81 423.00,350.99 423.00,349.00 423.00,349.00 423.00,205.00 423.00,205.00 422.97,185.99 411.97,171.03 392.00,171.00 392.00,171.00 147.00,171.00 147.00,171.00 147.00,171.00 80.00,171.00 80.00,171.00 77.82,171.00 74.15,171.21 72.31,169.98 65.88,165.68 75.02,155.29 79.09,152.85 Z M 51.00,185.09 C 51.00,185.09 84.00,185.09 84.00,185.09 84.00,185.09 143.00,185.09 143.00,185.09 143.00,185.09 326.00,185.09 326.00,185.09 326.00,185.09 374.00,185.09 374.00,185.09 380.82,185.00 392.91,184.39 398.98,186.80 406.72,189.87 407.99,196.64 408.00,204.00 408.00,204.00 408.00,349.00 408.00,349.00 408.00,349.00 408.00,367.00 408.00,367.00 408.00,376.03 408.56,387.51 398.00,391.40 396.07,392.11 393.08,392.00 391.00,392.00 391.00,392.00 118.00,392.00 118.00,392.00 118.00,392.00 52.00,392.00 52.00,392.00 38.75,391.82 36.02,382.49 36.00,371.00 36.00,371.00 36.00,230.00 36.00,230.00 36.00,219.92 33.83,196.27 41.14,189.23 44.19,186.30 47.08,186.08 51.00,185.09 Z M 211.00,211.37 C 191.83,216.08 182.72,218.30 168.00,233.00 165.07,235.92 161.01,239.77 158.61,243.00 152.34,251.42 147.60,262.73 145.51,273.00 145.51,273.00 144.63,280.00 144.63,280.00 143.89,283.84 143.03,284.41 143.03,289.00 143.03,293.95 144.17,294.85 144.80,299.00 147.79,318.66 157.04,337.08 173.00,349.55 186.59,360.16 207.66,367.74 225.00,366.96 225.00,366.96 240.00,364.63 240.00,364.63 251.29,362.33 264.72,355.97 273.00,347.98 286.93,334.56 294.03,325.13 298.21,306.00 299.49,300.16 299.96,301.79 300.00,295.00 300.00,295.00 300.00,283.00 300.00,283.00 299.96,276.45 297.32,267.18 295.00,261.00 282.10,226.71 246.97,206.78 211.00,211.37 Z M 210.00,226.59 C 215.33,225.62 222.45,225.97 228.00,226.00 248.65,226.13 269.27,242.22 278.34,260.00 282.23,267.61 284.98,275.39 285.00,284.00 285.03,297.60 285.57,299.69 280.82,313.00 278.23,320.27 273.36,326.56 268.00,332.00 260.02,340.09 259.27,341.16 249.00,345.98 239.63,350.39 229.26,352.13 219.00,352.00 212.90,351.92 213.43,351.28 208.00,350.15 170.53,342.41 149.94,302.29 162.89,267.00 168.07,252.89 179.60,239.36 193.00,232.40 197.60,230.01 204.92,228.02 210.00,226.59 Z M 196.00,251.53 C 188.37,254.76 186.11,262.24 186.00,270.00 186.00,270.00 186.00,307.00 186.00,307.00 186.02,314.96 187.16,324.58 197.00,324.98 207.13,325.39 208.67,322.05 217.00,317.55 217.00,317.55 245.00,302.50 245.00,302.50 250.02,299.93 257.76,295.51 257.66,289.00 257.56,282.46 252.07,278.84 247.00,276.01 247.00,276.01 213.00,257.91 213.00,257.91 207.50,254.88 202.54,250.78 196.00,251.53 Z M 202.60,271.11 C 207.78,269.79 214.44,275.46 219.00,277.92 222.41,279.75 234.32,284.73 235.26,288.15 236.16,291.49 231.29,293.34 229.00,294.50 229.00,294.50 212.00,303.96 212.00,303.96 210.29,304.88 205.96,307.21 204.15,307.22 200.82,307.22 201.05,303.36 201.00,301.00 201.00,301.00 201.00,279.00 201.00,279.00 201.01,275.59 200.49,273.89 202.60,271.11 Z"></path></svg>Tools</a>
       <a href="../seriesbase/index.html" id="cookingcorner"><svg width="2rem" height="2rem" viewBox="0 0 512 512" fill="currentColor"><path d="M 114.00,118.74 C 119.87,117.32 137.88,118.00 145.00,118.00 145.00,118.00 204.00,118.00 204.00,118.00 204.00,118.00 394.00,118.00 394.00,118.00 394.00,118.00 460.00,118.00 460.00,118.00 473.41,118.18 475.98,127.39 476.00,139.00 476.00,139.00 476.00,303.00 476.00,303.00 475.99,308.32 475.30,315.69 471.69,319.89 469.12,322.89 460.14,326.97 457.17,322.67 455.78,320.65 456.00,316.43 456.00,314.00 456.00,314.00 456.00,172.00 456.00,172.00 455.99,167.25 455.50,159.30 453.64,155.00 452.08,151.41 449.72,148.75 446.98,146.02 439.79,138.82 434.94,137.02 425.00,137.00 425.00,137.00 181.00,137.00 181.00,137.00 181.00,137.00 114.00,137.00 114.00,137.00 111.82,137.00 108.15,137.21 106.31,135.98 99.46,131.40 109.66,121.01 114.00,118.74 Z M 79.09,152.85 C 84.85,151.22 102.02,152.00 109.00,152.00 109.00,152.00 168.00,152.00 168.00,152.00 168.00,152.00 360.00,152.00 360.00,152.00 360.00,152.00 425.00,152.00 425.00,152.00 427.05,152.00 430.05,151.91 431.96,152.51 439.71,154.94 441.99,163.94 442.00,171.00 442.00,171.00 442.00,339.00 442.00,339.00 441.99,345.80 441.09,350.69 435.56,355.43 433.05,357.58 426.52,359.56 424.02,356.40 422.77,354.81 423.00,350.99 423.00,349.00 423.00,349.00 423.00,205.00 423.00,205.00 422.97,185.99 411.97,171.03 392.00,171.00 392.00,171.00 147.00,171.00 147.00,171.00 147.00,171.00 80.00,171.00 80.00,171.00 77.82,171.00 74.15,171.21 72.31,169.98 65.88,165.68 75.02,155.29 79.09,152.85 Z M 51.00,185.09 C 51.00,185.09 84.00,185.09 84.00,185.09 84.00,185.09 143.00,185.09 143.00,185.09 143.00,185.09 326.00,185.09 326.00,185.09 326.00,185.09 374.00,185.09 374.00,185.09 380.82,185.00 392.91,184.39 398.98,186.80 406.72,189.87 407.99,196.64 408.00,204.00 408.00,204.00 408.00,349.00 408.00,349.00 408.00,349.00 408.00,367.00 408.00,367.00 408.00,376.03 408.56,387.51 398.00,391.40 396.07,392.11 393.08,392.00 391.00,392.00 391.00,392.00 118.00,392.00 118.00,392.00 118.00,392.00 52.00,392.00 52.00,392.00 38.75,391.82 36.02,382.49 36.00,371.00 36.00,371.00 36.00,230.00 36.00,230.00 36.00,219.92 33.83,196.27 41.14,189.23 44.19,186.30 47.08,186.08 51.00,185.09 Z M 211.00,211.37 C 191.83,216.08 182.72,218.30 168.00,233.00 165.07,235.92 161.01,239.77 158.61,243.00 152.34,251.42 147.60,262.73 145.51,273.00 145.51,273.00 144.63,280.00 144.63,280.00 143.89,283.84 143.03,284.41 143.03,289.00 143.03,293.95 144.17,294.85 144.80,299.00 147.79,318.66 157.04,337.08 173.00,349.55 186.59,360.16 207.66,367.74 225.00,366.96 225.00,366.96 240.00,364.63 240.00,364.63 251.29,362.33 264.72,355.97 273.00,347.98 286.93,334.56 294.03,325.13 298.21,306.00 299.49,300.16 299.96,301.79 300.00,295.00 300.00,295.00 300.00,283.00 300.00,283.00 299.96,276.45 297.32,267.18 295.00,261.00 282.10,226.71 246.97,206.78 211.00,211.37 Z M 210.00,226.59 C 215.33,225.62 222.45,225.97 228.00,226.00 248.65,226.13 269.27,242.22 278.34,260.00 282.23,267.61 284.98,275.39 285.00,284.00 285.03,297.60 285.57,299.69 280.82,313.00 278.23,320.27 273.36,326.56 268.00,332.00 260.02,340.09 259.27,341.16 249.00,345.98 239.63,350.39 229.26,352.13 219.00,352.00 212.90,351.92 213.43,351.28 208.00,350.15 170.53,342.41 149.94,302.29 162.89,267.00 168.07,252.89 179.60,239.36 193.00,232.40 197.60,230.01 204.92,228.02 210.00,226.59 Z M 196.00,251.53 C 188.37,254.76 186.11,262.24 186.00,270.00 186.00,270.00 186.00,307.00 186.00,307.00 186.02,314.96 187.16,324.58 197.00,324.98 207.13,325.39 208.67,322.05 217.00,317.55 217.00,317.55 245.00,302.50 245.00,302.50 250.02,299.93 257.76,295.51 257.66,289.00 257.56,282.46 252.07,278.84 247.00,276.01 247.00,276.01 213.00,257.91 213.00,257.91 207.50,254.88 202.54,250.78 196.00,251.53 Z M 202.60,271.11 C 207.78,269.79 214.44,275.46 219.00,277.92 222.41,279.75 234.32,284.73 235.26,288.15 236.16,291.49 231.29,293.34 229.00,294.50 229.00,294.50 212.00,303.96 212.00,303.96 210.29,304.88 205.96,307.21 204.15,307.22 200.82,307.22 201.05,303.36 201.00,301.00 201.00,301.00 201.00,279.00 201.00,279.00 201.01,275.59 200.49,273.89 202.60,271.11 Z"></path></svg>CookingCorner</a>
+      <div class="sidebarSpacer"></div>
     </div>
     <div id="main" class="main"><div id="output"></div></div>
   </body>
@@ -161,7 +158,7 @@
   const sidebar = document.getElementById('sidebar');
   function setSite(obj) {document.getElementById(obj).style = 'color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);';}
 
-  let current_data = [];let current_group = 'Name';let current_sort_direction = 'asc';
+  let current_data = [];let currentGroup = 'Name  ';let current_sort_direction = 'asc';
 
   async function load_moviebase() {
     try {
@@ -180,23 +177,25 @@
     sortButton.className = 'sortButton';
     sortButton.onclick = () => {sort_overlay.style.display = 'flex';};
 
-    const sortButton_text = document.createElement('div');
-    sortButton_text.id = 'sortButton_text';
-    sortButton_text.className = 'sortButton_text';
-    const sort_arrow = document.createElement('div');
-    sort_arrow.className = 'sort_arrow';
-    sort_arrow.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-    sortButton.appendChild(sortButton_text);
-    sortButton.appendChild(sort_arrow);
+    const sortButtonText = document.createElement('div');
+    sortButtonText.id = 'sortButtonText';
+    sortButtonText.className = 'sortButtonText';
+    const sortButtonArrow = document.createElement('div');
+    sortButtonArrow.className = 'sortButtonArrow';
+    sortButtonArrow.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
+    sortButton.appendChild(sortButtonText);
+    sortButton.appendChild(sortButtonArrow);
     sidebar.appendChild(sortButton);
+
+    setGroupActive();
 
   }
   
-  function sort_group(z) {
-    const same_group = current_group === z;
+  function sortGroup(z) {
+    const same_group = currentGroup === z;
     if (same_group) {current_data.reverse();current_sort_direction = current_sort_direction === 'asc' ? 'desc' : 'asc';}
     else {
-      current_group = z;
+      currentGroup = z;
       current_sort_direction = 'asc';
       current_data.sort((a, b) => {
         if (z === 'Nummer') {
@@ -212,19 +211,19 @@
       });
     }
     load_table_data(current_data, z);
-    set_group_active();
+    setGroupActive();
   }
 
   function load_table_data(data, group_extra = null) {
     const container = document.getElementById('output');container.innerHTML = '';
     const groups = {
-      'Nummer': [], 'Name': [], 'Zufall': [], '0-9': [],
+      'Nummer': [], 'Name ': [], 'Zufall': [], '0-9': [],
       ...Object.fromEntries('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(c => [c, []]))
     };
     for (const entry of data) {
       const name = entry.title ?? '';
       const letter_1 = name.charAt(0).toUpperCase();
-      groups['Name'].push(entry);
+      groups['Name  '].push(entry);
       groups['Zufall'].push(entry);
       groups['Nummer'].push(entry);
       if (/[0-9]/.test(letter_1)) {groups['0-9'].push(entry);}
@@ -235,7 +234,7 @@
       const groupDiv = document.createElement('div');
       groupDiv.id = 'group_single_' + group_single;
       groupDiv.className = 'group_button';
-      if (group_single === (group_extra || 'Name')) {groupDiv.classList.add('aktiv');}
+      if (group_single === (group_extra || 'Name  ')) {groupDiv.classList.add('aktiv');}
       let data = groups[group_single];
       if (group_single === 'Nummer') {
         data.sort((a, b) => {
@@ -257,15 +256,15 @@
     }
   }
 
-  function set_group_active() {
-    const sortButton_text = document.getElementById('sortButton_text');
-    const sortButton_arrow = document.querySelector('.sort_arrow');
-    const arrow_down = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-    const arrow_up = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" style="transform: rotate(180deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-    if (!sortButton_text || !sortButton_arrow) return;
-    sortButton_text.textContent = 'Sortieren Nach:\u00A0\u00A0\u00A0' + current_group;
-    if (current_group === 'Zufall') {sortButton_arrow.innerHTML = '';}
-    else {sortButton_arrow.innerHTML = current_sort_direction === 'asc' ? arrow_down : arrow_up;}
+  function setGroupActive() {
+    const sortButtonText = document.getElementById('sortButtonText');
+    const sortButtonArrow = document.querySelector('.sortButtonArrow');
+    const arrowDown = '<svg width="24px" height="24px" viewBox="0 -960 960 960" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
+    const arrowUp = '<svg width="24px" height="24px" viewBox="0 -960 960 960" fill="currentColor" style="transform: rotate(180deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
+    if (!sortButtonText || !sortButtonArrow) return;
+    sortButtonText.textContent = 'Sortieren Nach:\u00A0\u00A0\u00A0' + currentGroup;
+    if (currentGroup === 'Zufall') {sortButtonArrow.innerHTML = '';}
+    else {sortButtonArrow.innerHTML = current_sort_direction === 'asc' ? arrowDown : arrowUp;}
   }
 
   function generate_table_data(data) {
@@ -317,7 +316,7 @@
   }
 
   function search_in_table_data(search_index) {
-    const group_div = document.getElementById('group_single_' + current_group);
+    const group_div = document.getElementById('group_single_' + currentGroup);
     if (!group_div) return;
     const cards = group_div.querySelectorAll('.movieCard');
     const search = search_index.trim().toLowerCase();
