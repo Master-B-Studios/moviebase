@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../homepage/images/MB_Icon_02.svg"></link>
     <style>
       body {display: grid;grid-template-columns: min-content auto;grid-template-rows: 100vh;background-color: #000000;margin: 0;padding: 0;overflow-y: scroll;color: #dbdbdb;font-size: 1rem;font-family: Arial, Helvetica, sans-serif;-webkit-tap-highlight-color: transparent;}
-      .sidebar {grid-column: 1;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content;background: linear-gradient(50deg, #22222299, #11111144, #22222299, #11111144);border-right: 0.01rem solid #999999;}
+      .sidebar {grid-column: 1;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content;background: linear-gradient(50deg, #22222299, #11111144, #22222299, #11111144);border-right: 0.01rem solid #999999;}
       .sidebar a {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
       .sidebar a:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
       .sidebar a svg {margin: 0 0.5rem 0 0;}
@@ -15,13 +15,18 @@
       
       .main {grid-column: 2;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content;background: linear-gradient(50deg, #22222299, #33333344, #22222299, #33333344);}
 
+      .sortHeader {height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;color: #999999;white-space: pre;cursor: default;}
       .sortButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
       .sortButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .sortButtonArrow {margin: 0 0.5rem 0 0;}
+      .sortButtonArrow:hover {color: #00aaaa;}
       .sortButtonText {margin: 0;}
-      .sortButtonArrow {margin: 0 0 0 1rem;}
+      
+      .randomButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .randomButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .randomButton svg {margin: 0 0.5rem 0 0;}
 
-
-      .randomButtonLandscape {height: 3rem;grid-column: 2;grid-row: 1;margin: 0.5rem 0 0 0.5rem;padding: 0 1rem;white-space: pre;}
+      
       .searchContainerLandscape {width: auto;height: 4rem;grid-column: 3;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
       .searchContainerLandscape input {width: auto;height: 3.15rem;margin: 0;padding: 0 0.5rem;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;color: #dbdbdb;cursor: text;}
       .addMovieLandscape {width: 3rem;height: 3rem;grid-column: 4;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
@@ -30,7 +35,7 @@
       .headerPortrait {width: 100vw;height: 4rem;position: fixed;top: 0;z-index: 8900;display: grid;grid-template-columns: auto min-content;grid-template-rows: min-content min-content;}
       .sortButtonPortrait {width: auto;height: 3rem;grid-column: 1 / span 2;grid-row: 1;margin: 0.5rem 0.5rem 0.5rem 4.1rem;padding: 0 0.5rem 0 1rem;white-space: pre;}
       .sortButtonPortrait .sortButtonArrow {position: relative;top: 0.1rem;}
-      .randomButtonPortrait {width: auto;height: 3rem;grid-column: 2;grid-row: 2;margin: 0 0.5rem 0 0;padding: 0 1rem;white-space: pre;}
+      
       .searchContainerPortrait {width: 100%;height: 4rem;grid-column: 1;grid-row: 2;text-align: center;margin: 0;padding: 0;}
       .searchContainerPortrait input {width: calc(100% - 1rem);height: 3.15rem;margin: 0;padding: 0 0.5rem;background-color: #222222;border-radius: 0.5rem;border: 1px solid #444444;box-shadow: rgba(0, 0, 0, 0.7) 2px 2px 6px 1px inset;color: #dbdbdb;cursor: text;}
       .addMoviePortrait {display: none;}
@@ -158,7 +163,7 @@
   const sidebar = document.getElementById('sidebar');
   function setSite(obj) {document.getElementById(obj).style = 'color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);';}
 
-  let current_data = [];let currentGroup = 'Name  ';let current_sort_direction = 'asc';
+  let current_data = [];let currentGroup = 'Name';let current_sort_direction = 'asc';
 
   async function load_moviebase() {
     try {
@@ -172,6 +177,11 @@
   }
 
   function load_navigation() {
+    const sortHeader = document.createElement('div');
+    sortHeader.className = 'sortHeader';
+    sortHeader.innerHTML = 'Sortieren Nach:';
+    sidebar.appendChild(sortHeader);
+
     const sortButton = document.createElement('div');
     sortButton.id = 'sortButton';
     sortButton.className = 'sortButton';
@@ -182,48 +192,45 @@
     sortButtonText.className = 'sortButtonText';
     const sortButtonArrow = document.createElement('div');
     sortButtonArrow.className = 'sortButtonArrow';
-    sortButtonArrow.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-    sortButton.appendChild(sortButtonText);
+    sortButtonArrow.innerHTML = '<svg width="2rem" height="2rem" viewBox="0 -1000 960 960" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
     sortButton.appendChild(sortButtonArrow);
+    sortButton.appendChild(sortButtonText);
     sidebar.appendChild(sortButton);
 
-    setGroupActive();
 
+    const randomButton = document.createElement('div');
+    randomButton.id = 'randomButton';
+    randomButton.className = 'randomButton';
+    randomButton.innerHTML = '<svg width="2rem" height="2rem" viewBox="0 0 512 512" fill="currentColor"><path d="M 253.09,31.55 C 260.46,30.61 271.60,38.55 278.00,42.40 278.00,42.40 333.00,74.37 333.00,74.37 333.00,74.37 422.00,125.92 422.00,125.92 422.00,125.92 441.00,136.78 441.00,136.78 444.15,138.73 448.03,140.65 449.83,144.04 451.21,146.65 451.00,150.11 451.00,153.00 451.00,153.00 451.00,359.00 451.00,359.00 451.00,361.89 451.21,365.35 449.83,367.96 447.76,371.87 442.72,374.07 439.00,376.14 439.00,376.14 425.00,384.52 425.00,384.52 425.00,384.52 343.00,431.94 343.00,431.94 343.00,431.94 280.00,468.34 280.00,468.34 274.39,471.63 260.13,481.49 254.04,480.63 250.48,480.13 243.43,475.48 240.00,473.60 240.00,473.60 207.00,454.42 207.00,454.42 207.00,454.42 102.00,393.71 102.00,393.71 102.00,393.71 72.83,376.68 72.83,376.68 69.28,374.53 64.10,372.36 61.74,368.90 59.73,365.95 60.01,362.40 60.00,359.00 60.00,359.00 60.00,153.00 60.00,153.00 60.01,149.60 59.73,146.05 61.74,143.10 64.16,139.55 70.02,137.07 73.72,134.76 73.72,134.76 104.00,117.15 104.00,117.15 104.00,117.15 165.00,81.70 165.00,81.70 165.00,81.70 199.00,62.35 199.00,62.35 199.00,62.35 231.00,43.60 231.00,43.60 235.72,40.77 248.50,33.15 253.09,31.55 Z M 256.00,53.00 C 256.00,53.00 180.00,96.42 180.00,96.42 180.00,96.42 91.00,148.00 91.00,148.00 91.00,148.00 91.00,150.00 91.00,150.00 91.00,150.00 102.00,156.30 102.00,156.30 102.00,156.30 132.01,173.53 132.01,173.53 132.01,173.53 208.00,217.20 208.00,217.20 208.00,217.20 241.01,236.37 241.01,236.37 244.74,238.49 251.83,243.34 256.00,243.16 259.72,242.99 268.37,237.26 271.91,235.15 271.91,235.15 304.00,216.60 304.00,216.60 304.00,216.60 378.99,173.53 378.99,173.53 378.99,173.53 420.00,150.00 420.00,150.00 420.00,150.00 420.00,148.00 420.00,148.00 420.00,148.00 366.00,116.81 366.00,116.81 366.00,116.81 300.00,78.17 300.00,78.17 300.00,78.17 256.00,53.00 256.00,53.00 Z M 283.00,158.00 C 283.00,158.00 269.00,165.65 269.00,165.65 266.97,166.67 265.37,167.62 263.00,167.29 257.03,166.48 246.80,157.66 246.11,151.00 245.36,143.84 248.56,138.40 247.98,135.00 247.36,131.40 244.18,128.12 241.00,126.57 233.80,123.08 215.44,124.70 212.92,134.02 211.71,138.95 218.54,141.53 212.92,146.04 210.71,147.74 199.35,154.33 197.00,154.30 191.26,154.22 184.47,145.40 184.06,140.00 183.23,129.18 192.30,122.25 200.58,117.10 217.89,106.31 252.40,102.50 268.98,116.34 275.24,121.56 277.05,127.18 275.10,135.00 274.38,137.88 272.19,142.19 272.61,144.83 273.31,149.18 280.12,154.51 283.00,158.00 Z M 293.00,164.46 C 298.85,164.16 307.94,165.50 311.42,170.85 316.45,178.59 303.95,184.20 298.00,184.87 292.88,185.45 285.12,183.82 281.15,180.49 275.13,175.46 278.81,168.78 285.00,166.14 287.49,165.09 290.34,164.83 293.00,164.46 Z M 246.00,453.00 C 246.00,453.00 246.00,270.00 246.00,270.00 246.00,270.00 244.98,262.22 244.98,262.22 244.98,262.22 233.00,254.37 233.00,254.37 233.00,254.37 209.00,240.28 209.00,240.28 209.00,240.28 190.00,229.58 190.00,229.58 190.00,229.58 123.00,190.83 123.00,190.83 123.00,190.83 80.00,167.00 80.00,167.00 80.00,167.00 80.00,350.00 80.00,350.00 80.00,350.00 80.98,357.32 80.98,357.32 80.98,357.32 93.00,365.28 93.00,365.28 93.00,365.28 118.00,379.61 118.00,379.61 118.00,379.61 150.00,398.49 150.00,398.49 150.00,398.49 199.00,426.52 199.00,426.52 199.00,426.52 227.00,442.80 227.00,442.80 227.00,442.80 246.00,453.00 246.00,453.00 Z M 431.00,167.00 C 431.00,167.00 388.00,190.83 388.00,190.83 388.00,190.83 302.00,240.28 302.00,240.28 302.00,240.28 278.00,254.39 278.00,254.39 278.00,254.39 266.02,262.22 266.02,262.22 266.02,262.22 265.00,270.00 265.00,270.00 265.00,270.00 265.00,453.00 265.00,453.00 265.00,453.00 307.00,429.56 307.00,429.56 307.00,429.56 393.00,379.70 393.00,379.70 393.00,379.70 418.00,365.28 418.00,365.28 418.00,365.28 430.01,357.47 430.01,357.47 430.01,357.47 431.00,350.00 431.00,350.00 431.00,350.00 431.00,167.00 431.00,167.00 Z M 149.00,274.00 C 144.98,272.06 130.99,264.95 129.02,261.68 125.20,255.33 131.80,242.71 140.00,241.23 150.61,239.30 159.64,244.29 168.00,250.04 184.02,261.06 199.39,281.43 197.54,302.00 196.82,309.98 195.30,315.79 187.00,318.87 182.28,320.62 178.58,319.61 174.21,323.47 170.25,326.96 169.89,332.13 169.00,337.00 164.66,335.94 153.28,330.18 150.76,326.53 149.01,323.83 150.30,320.93 150.76,318.00 151.52,312.08 150.27,307.14 155.34,302.47 161.41,296.87 176.23,299.76 174.87,286.00 174.23,279.49 168.30,271.27 163.00,267.70 155.57,262.68 150.23,265.25 149.00,274.00 Z M 314.00,301.00 C 314.00,277.56 328.62,258.54 348.00,246.60 355.24,242.14 371.73,237.23 378.70,244.28 382.58,248.18 382.99,253.85 383.00,259.00 383.00,259.00 383.00,265.00 383.00,265.00 382.70,282.71 367.09,296.22 359.59,311.00 357.50,315.13 356.72,316.36 356.00,321.00 355.57,323.80 355.35,329.11 353.43,331.15 353.43,331.15 337.00,341.00 337.00,341.00 333.26,327.84 339.33,311.89 346.68,301.00 350.88,294.78 356.03,289.10 358.79,282.00 361.39,275.32 360.37,262.85 350.00,266.74 344.55,268.78 338.54,276.69 336.35,282.00 336.35,282.00 333.83,289.62 333.83,289.62 331.83,292.73 317.93,300.05 314.00,301.00 Z M 151.23,342.02 C 161.51,338.30 169.09,349.36 171.63,358.00 172.78,361.89 173.31,368.30 169.57,371.05 165.75,373.87 159.36,371.30 156.26,368.47 150.05,362.81 143.88,348.79 151.23,342.02 Z M 346.29,344.93 C 352.53,342.87 358.68,345.49 358.42,353.00 358.16,360.25 352.30,370.50 346.00,374.07 337.54,378.85 333.49,371.82 334.09,364.00 334.69,356.27 340.02,349.14 346.29,344.93 Z"/></svg>Zufall';
+    randomButton.onclick = () => {
+      if (current_data.length === 0) return;
+      const random_index = Math.floor(Math.random() * current_data.length);
+      const random_movie = current_data[random_index];
+      load_table_data([random_movie], 'Zufall');
+      randomButton.blur();
+    };
+    sidebar.appendChild(randomButton);
+
+    setGroupActive();
   }
   
   function sortGroup(z) {
     const same_group = currentGroup === z;
     if (same_group) {current_data.reverse();current_sort_direction = current_sort_direction === 'asc' ? 'desc' : 'asc';}
-    else {
-      currentGroup = z;
-      current_sort_direction = 'asc';
-      current_data.sort((a, b) => {
-        if (z === 'Nummer') {
-          const numA = parseInt(a[Object.keys(a)[0]]) || 0;
-          const numB = parseInt(b[Object.keys(b)[0]]) || 0;
-          return numA - numB;
-        }
-        else {
-          const nameA = String(a[Object.keys(a)[1]] ?? '');
-          const nameB = String(b[Object.keys(b)[1]] ?? '');
-          return nameA.localeCompare(nameB, 'de');
-        }
-      });
-    }
-    load_table_data(current_data, z);
-    setGroupActive();
+    else {currentGroup = z;current_sort_direction = 'asc';current_data.sort((a, b) => {
+      if (z === 'Nummer') {const numA = parseInt(a[Object.keys(a)[0]]) || 0;const numB = parseInt(b[Object.keys(b)[0]]) || 0;return numA - numB;}
+      else {const nameA = String(a[Object.keys(a)[1]] ?? '');const nameB = String(b[Object.keys(b)[1]] ?? '');return nameA.localeCompare(nameB, 'de');}
+    });}
+    load_table_data(current_data, z);setGroupActive();
   }
 
   function load_table_data(data, group_extra = null) {
     const container = document.getElementById('output');container.innerHTML = '';
-    const groups = {
-      'Nummer': [], 'Name ': [], 'Zufall': [], '0-9': [],
-      ...Object.fromEntries('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(c => [c, []]))
-    };
+    const groups = {'Nummer': [], 'Name': [], 'Zufall': [], '0-9': [], ...Object.fromEntries('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(c => [c, []]))};
     for (const entry of data) {
       const name = entry.title ?? '';
       const letter_1 = name.charAt(0).toUpperCase();
-      groups['Name  '].push(entry);
+      groups['Name'].push(entry);
       groups['Zufall'].push(entry);
       groups['Nummer'].push(entry);
       if (/[0-9]/.test(letter_1)) {groups['0-9'].push(entry);}
@@ -236,20 +243,8 @@
       groupDiv.className = 'group_button';
       if (group_single === (group_extra || 'Name  ')) {groupDiv.classList.add('aktiv');}
       let data = groups[group_single];
-      if (group_single === 'Nummer') {
-        data.sort((a, b) => {
-          const numA = parseInt(a.id) || 0;
-          const numB = parseInt(b.id) || 0;
-          return current_sort_direction === 'asc' ? numA - numB : numB - numA;
-        });
-      }
-      else if (group_single !== 'Zufall') {
-        data.sort((a, b) => {
-          const nameA = a.title ?? '';
-          const nameB = b.title ?? '';
-          return current_sort_direction === 'asc' ? nameA.localeCompare(nameB, 'de') : nameB.localeCompare(nameA, 'de');
-        });
-      }
+      if (group_single === 'Nummer') {data.sort((a, b) => {const numA = parseInt(a.id) || 0;const numB = parseInt(b.id) || 0;return current_sort_direction === 'asc' ? numA - numB : numB - numA;});}
+      else if (group_single !== 'Zufall') {data.sort((a, b) => {const nameA = a.title ?? '';const nameB = b.title ?? '';return current_sort_direction === 'asc' ? nameA.localeCompare(nameB, 'de') : nameB.localeCompare(nameA, 'de');});}
       if (data.length > 0) {const table = generate_table_data(data);groupDiv.appendChild(table);}
       else {groupDiv.innerHTML = '<p>Keine Einträge gefunden...</p>';}
       container.appendChild(groupDiv);
@@ -257,12 +252,11 @@
   }
 
   function setGroupActive() {
-    const sortButtonText = document.getElementById('sortButtonText');
     const sortButtonArrow = document.querySelector('.sortButtonArrow');
-    const arrowDown = '<svg width="24px" height="24px" viewBox="0 -960 960 960" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-    const arrowUp = '<svg width="24px" height="24px" viewBox="0 -960 960 960" fill="currentColor" style="transform: rotate(180deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
-    if (!sortButtonText || !sortButtonArrow) return;
-    sortButtonText.textContent = 'Sortieren Nach:\u00A0\u00A0\u00A0' + currentGroup;
+    const sortButtonText = document.getElementById('sortButtonText');
+    const arrowDown = '<svg width="2rem" height="2rem" viewBox="0 -1000 960 960" fill="currentColor"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
+    const arrowUp = '<svg width="2rem" height="2rem" viewBox="0 -960 960 960" fill="currentColor" style="transform: rotate(180deg);"><path d="M465-363.5q-7-2.5-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5q-8 0-15-2.5Z"/></svg>';
+    if (!sortButtonText || !sortButtonArrow) return;sortButtonText.textContent = currentGroup;
     if (currentGroup === 'Zufall') {sortButtonArrow.innerHTML = '';}
     else {sortButtonArrow.innerHTML = current_sort_direction === 'asc' ? arrowDown : arrowUp;}
   }
