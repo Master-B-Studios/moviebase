@@ -8,37 +8,37 @@
     <style>
       body {width: 100vw;height: 100vh;display: grid;grid-template-columns: min-content auto;grid-template-rows: 100vh;background-color: #000000;margin: 0;padding: 0;overflow: hidden;color: #dbdbdb;font-size: 1rem;font-family: Arial, Helvetica, sans-serif;-webkit-tap-highlight-color: transparent;}
       .sidebar {grid-column: 1;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content;background: linear-gradient(50deg, #22222299, #11111144, #22222299, #11111144);border-right: 0.01rem solid #999999;overflow-y: scroll;}
-      .sidebar a {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .sidebar a:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .sidebar a {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .sidebar a:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .sidebar a svg {margin: 0 0.5rem 0 0;}
       .sidebarSpacer {height: 3rem;}
       .sidebarToggle {display: none;}
 
       .sortHeader {height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;color: #999999;white-space: pre;cursor: default;}
-      .sortButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .sortButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .sortButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .sortButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .sortButtonArrow {margin: 0 0.5rem 0 0;}
       .sortButtonArrow:hover {color: #00aaaa;}
       .sortButtonText {margin: 0;}
 
       .sortOverlay {display: none;grid-column: 2;grid-row: 1;inset: 0;z-index: 9100;background-color: #000000cc;align-items: center;justify-content: center;padding: 10rem;box-sizing: border-box;}
-      .sortOverlayContent {padding: 1rem;background-color: #111111;border: 1px solid #444444;border-radius: 0.5rem;box-shadow: rgba(0, 0, 0, 0.8) 0 0 2rem;display: flex;flex-wrap: wrap;justify-content: center;gap: 0.5rem;overflow-y: auto;}
+      .sortOverlayContent {padding: 1rem;background-color: #111111;border: 1px solid #444444;border-radius: 1rem;box-shadow: rgba(0, 0, 0, 0.8) 0 0 2rem;display: flex;flex-wrap: wrap;justify-content: center;gap: 0.5rem;overflow-y: auto;}
       .sortOverlayTitle {width: 100%;text-align: center;font-size: 1.2rem;margin-bottom: 1rem;color: #999999;}
-      .sortOverlayOptionButton {min-width: 1rem;height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 0.5rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .sortOverlayOptionButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .sortOverlayOptionButton {min-width: 1rem;height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 0.5rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .sortOverlayOptionButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       
-      .randomButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .randomButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .randomButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .randomButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .randomButton svg {margin: 0 0.5rem 0 0;}
 
-      .searchContainer {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .searchContainer:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .searchContainer {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .searchContainer:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .searchContainerInput {width: 100%;height: 100%;margin: 0;padding: 0 1rem;background: none;border-radius: 1rem;border: none;outline: none;font-size: 1rem;color: #dbdbdb;cursor: text;}
       .searchContainerInput:focus {outline: none;}
       .searchContainerInput::-webkit-search-cancel-button {filter: invert(50%) brightness(150%);cursor: pointer;}
 
-      .addMovie {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .addMovie:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .addMovie {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .addMovie:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .addMovie svg {margin: 0 0.5rem 0 0;}
 
       .main {grid-column: 2;grid-row: 1;overflow-y: scroll;position: relative;}
@@ -70,24 +70,24 @@
       
       
       .movieOverlay {height: 100vh;grid-column: 2;grid-row: 1;inset: 0;padding: 1rem;background-color: #000000bb;z-index: 9099;display: flex;align-items: center;justify-content: center;box-sizing: border-box;}
-      .movieOverlayContent {z-index: 9100;inset: 0;margin: auto;background-color: #000000bb;border: 1px solid #444444;border-radius: 1rem;display: grid;grid-template-columns: min-content min-content min-content min-content 0rem min-content min-content min-content;grid-template-rows: min-content auto min-content;}
+      .movieOverlayContent {z-index: 9100;inset: 0;margin: auto;background-color: #000000bb;border: 0.01rem solid #444444;border-radius: 1rem;display: grid;grid-template-columns: min-content min-content min-content min-content 0rem min-content min-content min-content;grid-template-rows: min-content auto min-content;}
 
       .overlayFSK {width: 3rem;height: 3rem;grid-column: 1;grid-row: 1;margin: 1rem 0 0 1rem;} .overlayFSK img {width: 100%;height: 100%;}
-      .overlayNumber {height: 3rem;grid-column: 2;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
+      .overlayNumber {height: 3rem;grid-column: 2;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
       .overlayNumber svg {margin: 0 0.5rem 0 0;}
-      .overlayYear {height: 3rem;grid-column: 3;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
+      .overlayYear {height: 3rem;grid-column: 3;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
       .overlayYear svg {margin: 0 0.5rem 0 0;}
-      .overlayTime {height: 3rem;grid-column: 4;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
+      .overlayTime {height: 3rem;grid-column: 4;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
       .overlayTime svg {margin: 0 0.5rem 0 0;}
       .spacer1 {grid-column: 5;grid-row: 1;}
-      .movieOverlayDownloadImage {height: 3rem;grid-column: 6;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .movieOverlayDownloadImage:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .movieOverlayDownloadImage {height: 3rem;grid-column: 6;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .movieOverlayDownloadImage:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .movieOverlayDownloadImage svg {margin: 0 0.5rem 0 0;}
-      .movieOverlayDownloadNFO {height: 3rem;grid-column: 7;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .movieOverlayDownloadNFO:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .movieOverlayDownloadNFO {height: 3rem;grid-column: 7;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .movieOverlayDownloadNFO:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
       .movieOverlayDownloadNFO svg {margin: 0 0.5rem 0 0;}
-      .movieOverlayExitButton {width: 3rem;height: 3rem;grid-column: 8;grid-row: 1;padding: 0;margin: 1rem 1rem 0 1rem;display: flex;align-items: center;justify-content: center;background: linear-gradient(50deg, #33333399, #22222299, #33333399, #22222299, #33333399);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .movieOverlayExitButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);}
+      .movieOverlayExitButton {width: 3rem;height: 3rem;grid-column: 8;grid-row: 1;padding: 0;margin: 1rem 1rem 0 1rem;display: flex;align-items: center;justify-content: center;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .movieOverlayExitButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
 
       .movieOverlayTitle {grid-column: 1 / span 5;grid-row: 2;margin: 1rem;padding: 0.5rem;font-size: 2rem;display: flex;align-items: center;justify-content: center;font-style: oblique;font-weight: bolder;text-align: center;line-height: normal;}
       .movieOverlayPoster {grid-column: 6 / span 3;grid-row: 2 / span 2;margin: 1rem;padding: 0;}
@@ -101,14 +101,33 @@
         .sidebar.open {transform: translateX(0);}
         .sidebarToggle {display: flex;position: fixed;top: 0.5rem;right: 0.5rem;z-index: 1001;width: 3rem;height: 3rem;align-items: center;justify-content: center;color: #dbdbdb;background-color: #000000cc;border: 0.01rem solid #999999;border-radius: 1rem;font-size: 1.5rem;cursor: pointer;}
 
-        .sortOverlay {grid-column: 1;grid-row: 1;padding: 1rem;}
+        .sortOverlay {grid-column: 1;grid-row: 1;padding: 0.5rem;}
         .cardContainer {grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));gap: 1rem;margin: 0.5rem;}
         .cardContainer.open {width: calc(50vw - 1rem); margin: 0.5rem 0.5rem 0 calc(50vw + 0.5rem);}
         #groupContainer_Zufall .cardContainer {width: calc(50vw - 1rem); margin: 4rem 0.5rem 0 calc(50vw + 0.5rem);}
 
-        .movieOverlay {width: 100vw;grid-column: 1;grid-row: 1;inset: 0;padding: 0.5rem;background-color: #000000bb;z-index: 9099;display: flex;align-items: baseline;justify-content: center;box-sizing: border-box;overflow-y: scroll;}
-        .movieOverlayContent {z-index: 9100;inset: 0;margin: 0;background-color: #000000bb;border: 1px solid #444444;border-radius: 1rem;display: grid;grid-template-columns: min-content auto min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content;}
+        .movieOverlay {width: 100vw;grid-column: 1;padding: 0.5rem;align-items: baseline;overflow-y: scroll;}
+        .movieOverlayContent {margin: 0;grid-template-columns: min-content auto min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content;}
 
+        .overlayFSK {grid-column: 1;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
+        .spacer1 {grid-column: 2;grid-row: 1;height: 3rem;}
+        .movieOverlayExitButton {grid-column: 3;grid-row: 1;margin: 0.5rem 0.5rem 0 0;}
+        .movieOverlayTitle {grid-column: 1 / span 3;grid-row: 2;}
+        .movieOverlayPoster {grid-column: 2 / span 2;grid-row: 3 / span 5;margin: 0.5rem;} 
+        .overlayNumber {grid-column: 1;grid-row: 3;margin: 0.5rem 0 0 0.5rem;}
+        .overlayYear {grid-column: 1;grid-row: 4;margin: 0.5rem 0 0 0.5rem;}
+        .overlayTime {grid-column: 1;grid-row: 5;margin: 0.5rem 0 0 0.5rem;}
+        .movieOverlayDownloadImage {grid-column: 1;grid-row: 6;margin: 0.5rem 0 0 0.5rem;}
+        .movieOverlayDownloadNFO {grid-column: 1;grid-row: 7;margin: 0.5rem 0 0 0.5rem;}
+        .movieOverlayPlot {grid-column: 1 / span 3;grid-row: 8;margin: 0.5rem;}
+      }
+
+      @media (orientation: landscape) and (max-height: 500px) {
+        .sortOverlay {padding: 0.5rem;align-items: baseline;overflow-y: scroll;}
+        .cardContainer {grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));gap: 1rem;margin: 0.5rem;}
+
+        .movieOverlay {grid-column: 2;padding: 0.5rem;align-items: baseline;overflow-y: scroll;}
+        .movieOverlayContent {margin: 0;grid-template-columns: auto auto min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content;}
         .overlayFSK {grid-column: 1;grid-row: 1;margin: 0.5rem 0 0 0.5rem;}
         .spacer1 {grid-column: 2;grid-row: 1;height: 3rem;}
         .movieOverlayExitButton {grid-column: 3;grid-row: 1;margin: 0.5rem 0.5rem 0 0;}
@@ -141,7 +160,7 @@
 </html>
 <script>
   const sidebar = document.getElementById('sidebar');
-  function setSite(obj) {document.getElementById(obj).style = 'color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1b7c1b89, #183a0e99, #1b7c1b89, #183a0e99, #1b7c1b89);';}
+  function setSite(obj) {document.getElementById(obj).style = 'color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);';}
 
   function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
@@ -378,6 +397,7 @@
     const movieOverlayPoster = document.createElement('div');
     
     movieOverlay.className = 'movieOverlay';
+    movieOverlay.onclick = (event) => {if (event.target === movieOverlay) {removeOverlay();}};
       movieOverlayContent.className = 'movieOverlayContent';
         overlayFSK.className = 'overlayFSK';
         overlayFSK.innerHTML = '<img src="icons/' + movie.mpaa + '.png" loading="lazy">';
