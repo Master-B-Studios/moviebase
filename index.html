@@ -7,16 +7,18 @@
     <link rel="icon" type="image/x-icon" href="../homepage/images/MB_Icon_02.svg"></link>
     <style>
       body {width: 100vw;height: 100vh;display: grid;grid-template-columns: min-content auto;grid-template-rows: 100vh;background-color: #000000;margin: 0;padding: 0;overflow: hidden;color: #dbdbdb;font-size: 1rem;font-family: Arial, Helvetica, sans-serif;-webkit-tap-highlight-color: transparent;}
-      body {background: radial-gradient(circle at 80% 10%,#2fff6321, transparent 40%), radial-gradient(circle at 30% 90%, #4dffd821, transparent 30%), linear-gradient(50deg,#000000,#041b12 55%,#000000);}
+      body {background: radial-gradient(circle at 80% 10%,#111111, transparent 40%), radial-gradient(circle at 30% 90%, #111111, transparent 30%), linear-gradient(50deg,#000000,#111111 55%,#000000);}
+
       .sidebar {grid-column: 1;grid-row: 1;display: grid;grid-template-columns: min-content;grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content;border-right: 0.01rem solid #999999;overflow-y: auto;}
-      .sidebar {background: radial-gradient(circle at 80% 10%,#2fff6310, transparent 40%), radial-gradient(circle at 30% 90%, #4dffd810, transparent 30%), linear-gradient(50deg,#000000,#041b12 55%,#000000);}
+      .sidebar {background: radial-gradient(circle at 80% 10%,#111111, transparent 40%), radial-gradient(circle at 30% 90%, #111111, transparent 30%), linear-gradient(50deg,#000000,#111111 55%,#000000);}
       .sidebar a {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;}
       .sidebar a svg {margin: 0 0.5rem 0 0;}
       .sidebarSpacer {height: 3rem;}
       .sidebarToggle {display: none;}
-      .sidebarButton {background: radial-gradient(circle at 10% 140%,#2fff6317, transparent 80%), radial-gradient(circle at 80% 10%, #4dffd81c, transparent 600%);border-radius: 1rem;border: 0.01rem solid #0b6403;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .sidebarButton:hover {color: #dbdbdb;border-color: #0f9b03;background:linear-gradient(135deg,#2fff6d47,#4dff821a);}
-      .sidebarButtonActive {background-color: #666666;border-radius: 1rem;border: 0.01rem solid #00000000;text-decoration: none;color: #000000;white-space: pre;cursor: default;transition: all 0.6s;}
+      .sidebarButton {background: linear-gradient(125deg, #222222, #444444);border-radius: 1rem;border: 0.01rem solid #444444;outline: none;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
+      .sidebarButton:hover, .sidebarButton:active, .sidebarButton:focus {background: linear-gradient(125deg, #132b13, #081a04);border-color: #0f9b03;color: #dbdbdb;}
+      .sidebarButtonActive {background: linear-gradient(125deg, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #00bb66;text-decoration: none;color: #00bb66;white-space: pre;cursor: default;transition: all 0.6s;}
+      .sidebarButtonNoClick {background: linear-gradient(125deg, #222222, #444444);border-radius: 1rem;border: 0.01rem solid #444444;text-decoration: none;color: #999999;white-space: pre;cursor: default;transition: all 0.6s;}
 
       .sortHeader {height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;color: #999999;white-space: pre;cursor: default;}
       .sortButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;}
@@ -25,10 +27,9 @@
       .sortButtonText {margin: 0;}
 
       .sortOverlay {display: none;grid-column: 2;grid-row: 1;inset: 0;z-index: 9100;background-color: #000000cc;align-items: center;justify-content: center;padding: 10rem;box-sizing: border-box;}
-      .sortOverlayContent {padding: 1rem;background-color: #111111;border: 1px solid #444444;border-radius: 1rem;box-shadow: rgba(0, 0, 0, 0.8) 0 0 2rem;display: flex;flex-wrap: wrap;justify-content: center;gap: 0.5rem;overflow-y: auto;}
+      .sortOverlayContent {padding: 1rem;background: radial-gradient(circle at 80% 10%,#111111, transparent 40%), radial-gradient(circle at 30% 90%, #111111, transparent 30%), linear-gradient(50deg,#000000,#111111 55%,#000000);border: 0.01rem solid #444444;border-radius: 1rem;box-shadow: rgba(0, 0, 0, 0.8) 0 0 2rem;display: flex;flex-wrap: wrap;justify-content: center;gap: 0.5rem;overflow-y: auto;}
       .sortOverlayTitle {width: 100%;text-align: center;font-size: 1.2rem;margin-bottom: 1rem;color: #999999;}
-      .sortOverlayOptionButton {min-width: 1rem;height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 0.5rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .sortOverlayOptionButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
+      .sortOverlayOptionButton {min-width: 1rem;height: 3rem;display: flex;align-items: center;justify-content: center;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem;}
       
       .randomButton {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;}
       .randomButton svg {margin: 0 0.5rem 0 0;}
@@ -37,10 +38,6 @@
       .searchContainerInput {width: 100%;height: 100%;margin: 0;padding: 0 1rem;background: none;border-radius: 1rem;border: none;outline: none;font-size: 1rem;color: #dbdbdb;cursor: text;}
       .searchContainerInput:focus {outline: none;}
       .searchContainerInput::-webkit-search-cancel-button {filter: invert(50%) brightness(150%);cursor: pointer;}
-
-      .addMovie {height: 3rem;display: flex;align-items: center;justify-content: left;margin: 0.5rem 0.5rem 0 0.5rem;padding: 0 1rem 0 0.5rem;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .addMovie:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
-      .addMovie svg {margin: 0 0.5rem 0 0;}
 
       .main {grid-column: 2;grid-row: 1;overflow-y: auto;position: relative;}
       .output {display: grid;grid-template-columns: auto;grid-template-rows: auto;overflow-y: scroll;}
@@ -81,14 +78,11 @@
       .overlayTime {height: 3rem;grid-column: 4;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;}
       .overlayTime svg {margin: 0 0.5rem 0 0;}
       .spacer1 {grid-column: 5;grid-row: 1;}
-      .movieOverlayDownloadImage {height: 3rem;grid-column: 6;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .movieOverlayDownloadImage:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
+      .movieOverlayDownloadImage {height: 3rem;grid-column: 6;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;}
       .movieOverlayDownloadImage svg {margin: 0 0.5rem 0 0;}
-      .movieOverlayDownloadNFO {height: 3rem;grid-column: 7;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .movieOverlayDownloadNFO:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
+      .movieOverlayDownloadNFO {height: 3rem;grid-column: 7;grid-row: 1;margin: 1rem 0 0 1rem;padding: 0 1rem 0 0.5rem;display: flex;align-items: center;justify-content: left;}
       .movieOverlayDownloadNFO svg {margin: 0 0.5rem 0 0;}
-      .movieOverlayExitButton {width: 3rem;height: 3rem;grid-column: 8;grid-row: 1;padding: 0;margin: 1rem 1rem 0 1rem;display: flex;align-items: center;justify-content: center;background: linear-gradient(50deg, #222222, #111111, #222222, #111111, #222222);border-radius: 1rem;border: 0.01rem solid #99999900;text-decoration: none;color: #999999;white-space: pre;cursor: pointer;transition: all 0.6s;}
-      .movieOverlayExitButton:hover {color: #dbdbdb;border-color: #dbdbdb;background: linear-gradient(50deg, #1e361e, #081a04, #1e361e, #081a04, #1e361e);}
+      .movieOverlayExitButton {width: 3rem;height: 3rem;grid-column: 8;grid-row: 1;padding: 0;margin: 1rem 1rem 0 1rem;display: flex;align-items: center;justify-content: center;}
 
       .movieOverlayTitle {grid-column: 1 / span 5;grid-row: 2;margin: 1rem;padding: 0.5rem;font-size: 2rem;display: flex;align-items: center;justify-content: center;font-style: oblique;font-weight: bolder;text-align: center;line-height: normal;}
       .movieOverlayPoster {grid-column: 6 / span 3;grid-row: 2 / span 2;margin: 1rem;padding: 0;}
@@ -143,7 +137,7 @@
       }
   </style>
   </head>
-  <body onload="setSite('moviebase');loadMovieBase();">
+  <body onload="loadMovieBase();">
     <button id="sidebarToggle" class="sidebarToggle" onclick="toggleSidebar()" aria-label="Menü öffnen oder schließen" aria-controls="sidebar" aria-expanded="false">☰</button>
     <div id="sidebar" class="sidebar">
       <a href="../homepage/index.html" id="homepage" class="sidebarButton"><svg width="2rem" height="2rem" viewBox="0 0 2440 2440" fill="currentColor"><path d="M 0 1240 L 160 1240 L 680 1760 L 680 800 L 860 800 L 1070 1190 L 1280 800 L 1640 800 A 230 230 0 0 1 1833 1153 A 240 240 0 0 1 1680 1560 L 1180 1560 L 1276 1380 L 1680 1380 A 60 60 0 0 0 1640 1260 L 1344 1260 L 1440 1080 L 1640 1080 A 50 50 0 0 0 1640 980 L 1363 980 L 1160 1360 L 980 1360 L 860 1136 L 860 1660 L 770 1840 L 1200 2280 L 1200 2440 L 0 1240 M 0 1200 L 1200 0 L 1200 160 L 160 1200 L 0 1200 M 1240 0 L 2440 1200 L 2280 1200 L 1240 160 L 1240 0 M 1240 2280 L 2280 1240 L 2440 1240 L 1240 2440 L 1240 2280 Z"></path></svg>Home</a>
@@ -156,7 +150,6 @@
 </html>
 <script>
   const sidebar = document.getElementById('sidebar');
-  function setSite(obj) {document.getElementById(obj).style = 'background-color: #666666;color: #000000;';}
 
   function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
@@ -218,7 +211,7 @@
     const sortOverlayOptions = ['Nummer','Name','0-9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     sortOverlayOptions.forEach(z => {
       const sortOverlayOptionButton = document.createElement('div');
-      sortOverlayOptionButton.className = 'sortOverlayOptionButton';
+      sortOverlayOptionButton.className = 'sortOverlayOptionButton sidebarButton';
       sortOverlayOptionButton.textContent = z;
       sortOverlayOptionButton.onclick = () => {sortGroup(z);sortOverlay.style.display = 'none';};
       sortOverlayContent.appendChild(sortOverlayOptionButton);
@@ -385,13 +378,13 @@
         overlayFSK.className = 'overlayFSK';
         overlayFSK.innerHTML = '<img src="icons/' + movie.mpaa + '.png" loading="lazy">';
         movieOverlayContent.appendChild(overlayFSK);
-        overlayNumber.className = 'overlayNumber sidebarButtonActive';
+        overlayNumber.className = 'overlayNumber sidebarButtonNoClick';
         overlayNumber.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg>' + movie.id;
         movieOverlayContent.appendChild(overlayNumber);
-        overlayYear.className = 'overlayYear sidebarButtonActive';
+        overlayYear.className = 'overlayYear sidebarButtonNoClick';
         overlayYear.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"/></svg>' + movie.year;
         movieOverlayContent.appendChild(overlayYear);
-        overlayTime.className = 'overlayTime sidebarButtonActive';
+        overlayTime.className = 'overlayTime sidebarButtonNoClick';
         overlayTime.innerHTML = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M420-800h120-120Zm0 640h120-120Zm-60 80-54-182q-48-38-77-95t-29-123q0-66 29-123t77-95l54-182h240l54 182q48 38 77 95t29 123q0 66-29 123t-77 95L600-80H360Zm261.5-258.5Q680-397 680-480t-58.5-141.5Q563-680 480-680t-141.5 58.5Q280-563 280-480t58.5 141.5Q397-280 480-280t141.5-58.5ZM404-750q20-5 38.5-8t37.5-3q19 0 37.5 3t38.5 8l-16-50H420l-16 50Zm16 590h120l16-50q-20 5-38.5 7.5T480-200q-19 0-37.5-2.5T404-210l16 50Z"/></svg>' + movie.runtime;
         movieOverlayContent.appendChild(overlayTime);
         const spacer1 = document.createElement('div');
